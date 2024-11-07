@@ -2,6 +2,8 @@ package ch03;
 
 public class _02_BookMain {
 	public static void main(String[] args) {
+		
+		// 1) 객체생성
 		_02_Book book1 = new _02_Book();
 		
 //		book1.bookNo = 1;
@@ -10,6 +12,7 @@ public class _02_BookMain {
 //		book1.price = 25000;
 //		book1.showInfo();
 		
+		// 2) setter로 값 전달
 		book1.setBookNo(1);
 		book1.setBookTitle("java입문");
 		book1.setAuthor("박은종");

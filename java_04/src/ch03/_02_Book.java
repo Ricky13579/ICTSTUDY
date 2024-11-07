@@ -10,7 +10,7 @@ public class _02_Book {
 //	String bookTitle;
 //	String author;
 	
-	// 멤버변수(속성)
+	// 멤버변수(속성) 5) 멤버변수로 값 들어온다.
 	private int bookNo; 		// 책번호 1			2
 	private String bookTitle;	// 책제목 java입문		JSP
 	private String author;		// 책저자 박은종			최범균
@@ -18,8 +18,9 @@ public class _02_Book {
 	
 	
 	// 멤버메서드(기능, 동작)
+	// 3) 매개변수로 값 전달
 	public void setBookNo(int bookNo) {
-		this.bookNo = bookNo;
+		this.bookNo = bookNo; // 4) 멤버변수에 대입
 	}
 	
 	public void setBookTitle(String bookTitle) {
