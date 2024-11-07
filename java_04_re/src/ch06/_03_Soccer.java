@@ -5,8 +5,8 @@ public class _03_Soccer {
 	String team; // 소속팀
 	String pos; // 선수 포지션
 	private int trophy; // 트로피 개수
-	private double height;
-	private double weight;
+	private double height; // 선수 키
+	private double weight; // 선수 몸무게
 	private String name; // 선수 이름
 	
 	public void setTrophy(int trophy) {
