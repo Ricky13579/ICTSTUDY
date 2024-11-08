@@ -1,0 +1,39 @@
+package ch04;
+
+public class _03_Me{
+	private String name;
+	private int age;
+	private String gender;
+	private String hobby;
+
+	public String getName(){
+		return name;
+	}
+	public void setName(String name){
+		this.name = name;
+	}
+	public int getAge(){
+		return age;
+	}
+	public void setAge(int age){
+		this.age = age;
+	}
+	public String getGender(){
+		return gender;
+	}
+	public void setGender(String gender){
+		this.gender = gender;
+	}
+	public String getHobby(){
+		return hobby;
+	}
+	public void setHobby(String hobby){
+		this.hobby = hobby;
+	}
+	public void myInfo(){
+		System.out.println("내 이름은 "+getName());
+		System.out.println("내 나이는 "+getAge()+"살");
+		System.out.println("나는 "+getGender()+"다.");
+		System.out.println("내 취미는 "+getHobby()+"이다.");
+	}
+}

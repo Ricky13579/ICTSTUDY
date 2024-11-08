@@ -1,0 +1,15 @@
+package ch04;
+
+public class _02_BookMain{
+	public static void main(String[] args){
+		_02_Book book = new _02_Book();
+		
+		book.setBookNo(1);
+		book.setBookTitle("java입문");
+		book.setAuthor("박은종");
+		book.setPrice(25000);
+		book.setPageCOunt(150);
+
+		book.getterInfo();
+	}
+}
