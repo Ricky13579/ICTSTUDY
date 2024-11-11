@@ -15,11 +15,13 @@ public class _05_BookMain {
 		// 3) getter로 출력
 		book1.getterInfo();
 		
-		System.out.println();
 		System.out.println("<<< 매개변수 생성자 >>>");
 		// 1) 객체생성
 		_05_Book book2 = new _05_Book(2, "JSP", "최범균");
 		// 2) getter로 출력
 		book2.getterInfo();
+		
+		_05_Book book3 = new _05_Book(3, "스프링");
+		book3.getterInfo();
 	}
 }

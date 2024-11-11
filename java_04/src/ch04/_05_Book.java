@@ -15,6 +15,17 @@ public class _05_Book {
 		this.author = author;
 	}
 	
+	public _05_Book(int bookNo, String bookTitle) {
+		this.bookNo = bookNo;
+		this.bookTitle = bookTitle;
+	}
+	
+	// 생성자 오버로드
+	/*
+	 * 생성자가 2개 이상 제공되는 경우를 말한다.
+	 * 메서드나 생성자의 매개변수 개수가 다르거나 타입이 다른 경우를 말하며, 리턴타입과는 무관하다.
+	 */
+	
 	public int getBookNo() {
 		return bookNo;
 	}
