@@ -9,8 +9,8 @@ public class _06_Student {
 	    * 여러 인스턴스가 공유한다.
 	    * 인스턴스가 생성되지 않아도 사용할 수 있기 때문에 클래스명.static 변수, 클래스명.static 메서드 사용가능
 	    * - static 변수나 메서드는 static 메서드에서 호출가능
-	    *   static 메서드에서 인스턴스 변수나 메서드를 호출시 컴파일 오규가 난다.
-	    *   static 메서드는 프로그램 실행시 자동으로 메모리에 올라가나, 일반메서드는 객체를 생성해야 메모리에 올라간다. 
+	    *   static 메서드에서 인스턴스 변수나 메서드를 호출시 컴파일 오류가 난다.
+	    *   static 메서드는 프로그램 실행시 자동으로 데이터영역 메모리에 올라가나, 일반메서드는 객체를 생성해야 메모리에 올라간다. 
 	 */
 	
 	static int serialNum = 1000;
@@ -38,6 +38,12 @@ public class _06_Student {
 	
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public static int getSerialNum() {
+		int i = 10;
+		String name = "이지원";  // 일반 멤버변수 -> static 메서드 안에서 사용 불가
+		return serialNum;
 	}
 	
 	public void studentInfo() {

@@ -11,5 +11,6 @@ public class _06_StudentMain {
 		System.out.println("SerialNum : "+_06_Student.serialNum);
 		son.setName("손수경");
 		son.studentInfo();
+		
 	}
 }
