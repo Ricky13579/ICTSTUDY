@@ -11,6 +11,5 @@ public class Hellojava {
 		System.out.println("Welcome~~~");
 		System.out.println("지명준 아자아자 화이팅");
 		System.out.print("지명준 아자아자!!!!@@@");
-		
-}
+	}
 }

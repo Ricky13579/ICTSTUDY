@@ -11,27 +11,35 @@ public class _03_Me {
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	public int getAge() {
 		return age;
 	}
+	
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
 	public String getGender() {
 		return gender;
 	}
+	
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+	
 	public String getHobby() {
 		return hobby;
 	}
+	
 	public void setHobby(String hobby) {
 		this.hobby = hobby;
 	}
+	
 	public void myInfo() {
 		System.out.println("제 이름은 "+getName()+"입니다.");
 		System.out.println("제 나이는 "+getAge()+"살입니다.");

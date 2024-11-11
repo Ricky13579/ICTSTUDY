@@ -36,27 +36,35 @@ public class _04_Car {
 	public String getBrand() {
 		return brand;
 	}
+	
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
+	
 	public String getModel() {
 		return model;
 	}
+	
 	public void setModel(String model) {
 		this.model = model;
 	}
+	
 	public int getPrice() {
 		return price;
 	}
+	
 	public void setPrice(int price) {
 		this.price = price;
 	}
+	
 	public String getMadein() {
 		return madein;
 	}
+	
 	public void setMadein(String madein) {
 		this.madein = madein;
 	}
+	
 	public void CarInfo() {
 		System.out.println("제가 타고 싶은 차의 브랜드는 "+getBrand()+"입니다.");
 		System.out.println("제가 타고 싶은 차의 모델은 "+getModel()+"입니다.");
