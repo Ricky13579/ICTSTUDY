@@ -38,7 +38,7 @@ public class _01_Animal {
 		
 	// 멤버변수 정보 출력
 	public void printInfo() {
-		System.out.println(getKind()+"의 다리의 개수는 "+getLegs()+"개입니다.");
-		System.out.println(getKind()+"의 몸무게는 "+getWeight()+"Kg 정도입니다.");
+		System.out.println(getKind() + "의 다리의 개수는 "+getLegs() + "개입니다.");
+		System.out.println(getKind() + "의 몸무게는 "+getWeight() + "Kg 정도입니다.");
 	}
 }
