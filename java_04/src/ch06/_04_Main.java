@@ -29,12 +29,18 @@ public class _04_Main {
 		
 		_04_Animal aniEagle = new _04_Eagle();
 		aniEagle.move();
+		_04_Eagle e = (_04_Eagle)aniEagle;
+		e.flying();
 		
 		_04_Animal aniTiger = new _04_Tiger();
 		aniTiger.move();
+		_04_Tiger t = (_04_Tiger)aniTiger;
+		t.hunting();
 		
 		_04_Animal aniFish = new _04_Fish();
 		aniFish.move();
+		_04_Fish f = (_04_Fish)aniFish;
+		f.eating();
 		
 		System.out.println("\n<<< 매개변수를 통한 다형성 적용 >>>");
 		animalMove(new _04_Human());
