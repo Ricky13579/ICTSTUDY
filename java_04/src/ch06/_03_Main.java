@@ -14,7 +14,11 @@ public class _03_Main {
 		vip.printInfo();
 		
 		System.out.println("[ _03_BlackCustomer 객체생성 + 매개변수 생성자로 멤버변수에 값 전달 ]");
-		_03_BlackCustomer black = new _03_BlackCustomer("C1002", "진상", "black", 1000);
+		_03_BlackCustomer black = new _03_BlackCustomer();
+		black.setId("C1002");
+		black.setName("진상");
+		black.setGrade("black");
+		black.setPenalty(1000);
 		black.printInfo();
 	}
 }
