@@ -48,11 +48,14 @@ public class _04_Main {
 		animal.move();
 		if (animal instanceof _04_Human) {
 			((_04_Human) animal).readBook();
-		}else if(animal instanceof _04_Eagle) {
+		}
+		else if(animal instanceof _04_Eagle) {
 			((_04_Eagle)animal).flying();
-		}else if(animal instanceof _04_Tiger) {
+		}
+		else if(animal instanceof _04_Tiger) {
 			((_04_Tiger)animal).hunting();
-		}else if(animal instanceof _04_Fish){
+		}
+		else if(animal instanceof _04_Fish){
 			((_04_Fish)animal).eating();
 		}
 	} // animalMove
