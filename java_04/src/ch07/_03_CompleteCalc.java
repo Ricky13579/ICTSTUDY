@@ -16,7 +16,6 @@ public class _03_CompleteCalc extends _03_Calculator{
 		}
 	}
 	
-	@Override
 	public void printInfo() {
 		System.out.println("Calc 인터페이스를 구현하였습니다.");
 	}

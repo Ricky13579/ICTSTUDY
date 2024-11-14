@@ -2,7 +2,7 @@ package ch07;
 
 public class _03_Main {
 	public static void main(String[] args) {
-		_03_Calc calc = new _03_CompleteCalc();
+		_03_CompleteCalc calc = new _03_CompleteCalc();
 		
 		int num1 = 10, num2 = 5;
 		
