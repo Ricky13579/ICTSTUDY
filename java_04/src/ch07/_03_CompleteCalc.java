@@ -12,7 +12,7 @@ public class _03_CompleteCalc extends _03_Calculator{
 		if(num2 != 0) {
 			return num1 / num2;
 		}else {
-			return ERROR;
+			return _03_Calc.ERROR;
 		}
 	}
 	
