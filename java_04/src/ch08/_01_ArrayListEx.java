@@ -68,17 +68,26 @@ public class _01_ArrayListEx {
 		}
 		System.out.println();
 		
+		System.out.println("[방법3. Iterator(반복자 인터페이스) 지정하기]");
+		// 10. 반복자 : Iterator<E> iterator : while(hasNext())  { next() }
+		// 반복자 생성
+		Iterator<String> iterator1 = season.iterator();
+		
+		// 리스트값이 존재하는 동안 다음값을 읽어서 출력
+		while(iterator1.hasNext()) {
+			String season1 = iterator1.next();
+			System.out.println(season1);
+		}
+		System.out.println();
+		
 		List<String> snacks = new ArrayList<String>();
 		snacks.add("얼큰오뎅탕");
 		snacks.add("육회");
 		snacks.add("치즈계란말이");
 		snacks.add("조개술찜");
 		snacks.add("모둠 소세지");
-		snacks.add("마른 오징어");
 		snacks.add("파스타");
 		snacks.add("명란파밥");
-		snacks.add("야끼만두");
-		snacks.add("돼지껍데기");
 		System.out.println("[방법1. for문]");
 		for(int i = 0; i < snacks.size(); i++) {
 			System.out.println("내가 좋아하는 안주 중 " + (i+1) + "번째는 " + snacks.get(i)+"입니다.");
@@ -89,5 +98,15 @@ public class _01_ArrayListEx {
 		for(String a : snacks) {
 			System.out.println(a+"는(은) 내가 좋아하는 안주 중 하나다.");
 		}
+		System.out.println();
+		
+		System.out.println("[방법3. iterator(반복자 인터페이스) 지정하기]");
+//		Iterator<String> iterator2 = snacks.iterator(); 
+		Iterator iterator2 = snacks.iterator(); // 자료형이 생략시 Object형으로 반환
+		while(iterator2.hasNext()) {
+			System.out.println(iterator2.next());
+		}
+		System.out.println();
+		
 	}
 }
