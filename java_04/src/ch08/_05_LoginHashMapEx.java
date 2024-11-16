@@ -59,6 +59,7 @@ public class _05_LoginHashMapEx {
 	// 아이디를 입력받을 때 Q,q 중 하나만을 입력하면 강제종료 시키고 그렇지 않으면 에러메시지를 출력하는 메서드
 	public static void ErrorCheck(String str) {
 		if(str.equals("Q") || str.equals("q")) {
+			System.out.println("시스템을 강제종료합니다.");
 			System.exit(0);
 		}else {
 			System.out.println("입력하신 아이디가 존재하지 않습니다.");
