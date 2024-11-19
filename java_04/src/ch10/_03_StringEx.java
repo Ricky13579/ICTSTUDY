@@ -48,7 +48,7 @@ public class _03_StringEx {
 		System.out.println();
 		
 		// trim : 공백 제거
-		String strTrim = "    Hi!!   ";
+		String strTrim = "     Hi!!    ";
 		System.out.println(strTrim);
 		System.out.println(strTrim.trim());
 	}
