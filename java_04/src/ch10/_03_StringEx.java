@@ -29,5 +29,27 @@ public class _03_StringEx {
 		// 소문자로 변환 : toLowerCase()
 		s5 = s2.toLowerCase();
 		System.out.println("s5 : " + s5); // s5 : a barking cat never bites!!
+		System.out.println();
+		
+		// ----------- split("쪼갤 문자") => 중요 ------------
+		// split("쪼갤 문자") : 입력받는 정규표현식 또는 특정문자를 기준으로 문자열을 나누어 배열에 저장하여 리턴한다.
+		String hpStr = "010-1234-5678";
+		String[] hp = hpStr.split("-");
+		System.out.println("hp1 : " + hp[0]);
+		System.out.println("hp2 : " + hp[1]);
+		System.out.println("hp3 : " + hp[2]);
+		System.out.println();
+		
+		String cities = "서울, 제주도, 부산, 광주, 대전";
+		String[] city = cities.split(", ");
+		for(int i = 0; i < city.length; i++) {
+			System.out.println((i+1)+"번째 도시 : " + city[i]);
+		}
+		System.out.println();
+		
+		// trim : 공백 제거
+		String strTrim = "    Hi!!   ";
+		System.out.println(strTrim);
+		System.out.println(strTrim.trim());
 	}
 }
