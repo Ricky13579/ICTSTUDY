@@ -13,10 +13,10 @@ public class _02_MemberService {
 		mDTO.setPassword("1234");
 		mDTO.setGender("남");
 		mDTO.setEmail("wlgjaudwns@naver.com");
-		mDTO.setAddress("서울");
+		mDTO.setAddress("목동");
 		
 		instance.login("ricky", "1234", mDTO);
-		instance.memberInsert("지명준","5678",mDTO);
+		instance.memberInsert(mDTO, "아이유","0123", "남성", "iu@email.com", "마포");
 		instance.memberSelect(mDTO.getId(), mDTO);
 		System.out.println("수정하시고 싶으신 회원 정보를 입력하세요");
 		instance.memberUpdate(mDTO, sc.next(), sc.next(), sc.next(), sc.next(), sc.next());

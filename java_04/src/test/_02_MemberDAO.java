@@ -4,7 +4,7 @@ public interface _02_MemberDAO {
 	
 	public void login(String id, String password, _02_MemberDTO dto);
 	
-	public void memberInsert(String id, String password, _02_MemberDTO dto);
+	public void memberInsert(_02_MemberDTO dto, String id, String password, String gender, String email, String address);
 	
 	public void memberUpdate(_02_MemberDTO dto, String id, String password, String gender, String email, String address);
 	

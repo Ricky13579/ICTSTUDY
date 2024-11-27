@@ -6,6 +6,7 @@ public class _02_MemberDAOImpl implements _02_MemberDAO{
 	// 싱글톤 작성
 	private _02_MemberDAOImpl() {
 		System.out.println("로그인 시작");
+		System.out.println();
 	}
 	
 	private static _02_MemberDAOImpl instance = new _02_MemberDAOImpl();
@@ -33,8 +34,13 @@ public class _02_MemberDAOImpl implements _02_MemberDAO{
 	}
 
 	@Override
-	public void memberInsert(String id, String password, _02_MemberDTO dto) {
+	public void memberInsert(_02_MemberDTO dto, String id, String password, String gender, String email, String address) {
 		if(!(dto.getId().equals(id)) && !(dto.getPassword().equals(password))) {
+			dto.setId(id);
+			dto.setPassword(password);
+			dto.setGender(gender);
+			dto.setEmail(email);
+			dto.setAddress(address);
 			System.out.println(id+"님 환영합니다.");
 			System.out.println();
 		}else {
