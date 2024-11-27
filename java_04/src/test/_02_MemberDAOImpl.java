@@ -47,27 +47,25 @@ public class _02_MemberDAOImpl implements _02_MemberDAO{
 	public void memberUpdate(_02_MemberDTO dto, String id, String password, String gender, String email, String address) {
 			if(dto.getId() != null) {
 				dto.setId(id);
+				if(dto.getPassword() != null) {
+					dto.setPassword(password);
+					if(dto.getGender() != null) {
+						dto.setGender(gender);
+						if(dto.getEmail() != null) {
+							dto.setEmail(email);
+							if(dto.getAddress() != null) {
+								dto.setAddress(address);
+								System.out.println(dto.toString());
+								System.out.println(dto.getId() + "님의 회원정보 수정이 완료되었습니다.");
+								System.out.println();
+							}
+						}
+					}
+				}
+			}else {
+				System.out.println("아이디가 존재하지 않습니다.");
+				System.out.println();
 			}
-			
-			if(dto.getPassword() != null) {
-				dto.setPassword(password);
-			}
-			
-			if(dto.getGender() != null) {
-				dto.setGender(gender);
-			}
-			
-			if(dto.getEmail() != null) {
-				dto.setEmail(email);
-			}
-			
-			if(dto.getAddress() != null) {
-				dto.setAddress(address);
-			}
-			
-			System.out.println(dto.toString());
-			System.out.println(dto.getId() + "님의 회원정보 수정이 완료되었습니다.");
-			System.out.println();
 		}
 
 	@Override

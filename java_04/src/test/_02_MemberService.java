@@ -21,8 +21,8 @@ public class _02_MemberService {
 		System.out.println("수정하시고 싶으신 회원 정보를 입력하세요");
 		instance.memberUpdate(mDTO, sc.next(), sc.next(), sc.next(), sc.next(), sc.next());
 		instance.memberSelect(mDTO.getId(), mDTO);
-		sc.close();
 		instance.memberDelete(mDTO.getId(), mDTO);
+		instance.memberUpdate(mDTO, sc.next(), sc.next(), sc.next(), sc.next(), sc.next());
 		instance.memberSelect(mDTO.getId(), mDTO);
 	}
 }
