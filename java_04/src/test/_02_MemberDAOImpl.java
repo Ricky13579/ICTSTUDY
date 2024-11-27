@@ -78,7 +78,7 @@ public class _02_MemberDAOImpl implements _02_MemberDAO{
 			dto.setGender(null);
 			dto.setEmail(null);
 			dto.setAddress(null);
-			System.out.println(id+"님의 회원정보가 삭제되었습니다.");
+			System.out.println(id + "님의 회원정보가 삭제되었습니다.");
 			System.out.println();
 		}
 		else {
