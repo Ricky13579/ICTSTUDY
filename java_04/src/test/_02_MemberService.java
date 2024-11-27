@@ -6,9 +6,6 @@ public class _02_MemberService {
 	public static void main(String[] args) {
 		// 다형성 적용, 싱글톤 적용
 		_02_MemberDAO instance = _02_MemberDAOImpl.getinstance();
-//		_02_MemberDAO inst = _02_MemberDAOImpl.getinstance();
-//		System.out.println(instance);
-//		System.out.println(inst);
 		_02_MemberDTO mDTO = new _02_MemberDTO();
 		Scanner sc = new Scanner(System.in);
 		
