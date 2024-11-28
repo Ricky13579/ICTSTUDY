@@ -1,0 +1,13 @@
+BOOKDTO 클래스 - bookNO(int),
+		 bookTitle(String),
+		 bookAuthor(String),
+		 bookPrice(int)
+
+book 인터페이스 - bookInsert(book 정보),
+		  bookUpdate(book 정보),
+		  bookDelete(bookNo),
+		  bookSELECT(bookNo)
+
+bookDAOImpl 자식클래스 - 싱글톤, 재정의
+
+bookService 메인클래스 - 다형성, 싱글톤, 메서드 호출
