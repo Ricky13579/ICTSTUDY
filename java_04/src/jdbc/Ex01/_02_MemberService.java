@@ -25,34 +25,34 @@ public class _02_MemberService {
 					islogin = false;
 				}
 				while(islogin) {
-				System.out.println("*---------------------------------------------*");
-				System.out.println("1. 추가  2. 수정  3. 삭제  4. 조회   5. 종료");
-				System.out.println("*---------------------------------------------*");
-				System.out.print("◇ 메뉴 선택 : ");
-				int menu = sc.nextInt();
-				sc.nextLine();
-				switch(menu) {
-					case 1:
-						dao.memberInsert(dto, sc);
-						break;
-					case 2:
-						dao.memberUpdate(sc);
-						break;
-					case 3: 
-						dao.memberDelete(sc);
-						break;
-					case 4:
-						System.out.println("전체 회원 정보입니다.");
-						dao.memberSelect(sc);
-						break;
-					case 5:
-						System.out.println("시스템을 종료합니다.");
-						System.exit(0);
-						break;
-					default:
-						System.out.println("잘못 입력하셨습니다. 다시 해주십시오");
-						break;
-					}
+					System.out.println("*---------------------------------------------*");
+					System.out.println("1. 추가  2. 수정  3. 삭제  4. 조회   5. 종료");
+					System.out.println("*---------------------------------------------*");
+					System.out.print("◇ 메뉴 선택 : ");
+					int menu = sc.nextInt();
+					sc.nextLine();
+					switch(menu) {
+						case 1:
+							dao.memberInsert(dto, sc);
+							break;
+						case 2:
+							dao.memberUpdate(sc);
+							break;
+						case 3: 
+							dao.memberDelete(sc);
+							break;
+						case 4:
+							System.out.println("전체 회원 정보입니다.");
+							dao.memberSelect(sc);
+							break;
+						case 5:
+							System.out.println("시스템을 종료합니다.");
+							System.exit(0);
+							break;
+						default:
+							System.out.println("잘못 입력하셨습니다. 다시 해주십시오");
+							break;
+						}
 				}
 				break;
 			case "no":
