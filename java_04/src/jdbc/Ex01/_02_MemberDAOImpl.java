@@ -20,15 +20,17 @@ public class _02_MemberDAOImpl implements _02_MemberDAO{
 	ResultSet rs = null;			// SQL 실행 결과(SELECT)
 
 	@Override
-	public void login(String id, String pw) {
+	public int login(Scanner sc) {
+		System.out.println("*** 로그인 ***");
 		int cnt = 0;
-		String sql = "SELECT ?, ? FROM jdbc_member_tb1 WHERE id = ?";
+		String sql = "SELECT id, password "
+					+ "FROM jdbc_member_tb1 "
+					+ "WHERE id = ? AND password = ?";
 		try {
 			conn = DriverManager.getConnection(dbURL, dbID, dbPW);
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
-			pstmt.setString(2, pw);
-			pstmt.setString(3, id);
+			pstmt.setString(1, sc.next());
+			pstmt.setString(2, sc.next());
 			
 			cnt = pstmt.executeUpdate();
 			if(cnt == 1) {
@@ -37,6 +39,8 @@ public class _02_MemberDAOImpl implements _02_MemberDAO{
 				System.out.println();
 			}else {
 				System.out.println("로그인 실패");
+				memberInsert(new _02_MemberDTO(), sc);
+				login(sc);
 				System.out.println();
 			}
 		}
@@ -45,29 +49,41 @@ public class _02_MemberDAOImpl implements _02_MemberDAO{
 		}
 		finally {
 			try {
-				
-			}
-			catch(Exception e) {
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			}catch(Exception e) {
 				e.printStackTrace();
 			}
 		}
+		return cnt;
 	}
 
 	// 회원가입
 	@Override
-	public int memberInsert(Scanner sc) {
+	public int memberInsert(_02_MemberDTO dto, Scanner sc) {
+		System.out.println("[ 회원가입 ]");
 		int insertCnt = 0;
+		System.out.print("아이디를 입력하세요 : ");
+		dto.setId(sc.next());
+		System.out.print("비밀번호를 입력하세요 : ");
+		dto.setPassword(sc.next());
+		System.out.print("성별을 입력하세요 : ");
+		dto.setGender(sc.next());
+		System.out.print("이메일을 입력하세요 : ");
+		dto.setEmail(sc.next());
+		System.out.print("주소를 입력하세요 : ");
+		dto.setAddress(sc.next());
 		
 		String sql = "INSERT INTO jdbc_member_tb1(id, password, gender, email, address) "
 					+ "VALUES(?, ?, ?, ?, ?)";
 		try {
 			conn = DriverManager.getConnection(dbURL, dbID, dbPW); // DB연결
 			pstmt = conn.prepareStatement(sql); // SQL 문장
-			pstmt.setString(1, sc.next());
-			pstmt.setString(2, sc.next());
-			pstmt.setString(3, sc.next());
-			pstmt.setString(4, sc.next());
-			pstmt.setString(5, sc.next());
+			pstmt.setString(1, dto.getId());
+			pstmt.setString(2, dto.getPassword());
+			pstmt.setString(3, dto.getGender());
+			pstmt.setString(4, dto.getEmail());
+			pstmt.setString(5, dto.getAddress());
 			
 			insertCnt = pstmt.executeUpdate(); // SQL 문장 실행(Ctrl + Enter) => I, U, D SQL 실행 => 1 : 성공, 0 : 실패
 			if(insertCnt == 1) {
@@ -90,7 +106,6 @@ public class _02_MemberDAOImpl implements _02_MemberDAO{
 				e.printStackTrace();
 			}
 		}
-		
 		return insertCnt;
 	}
 
@@ -101,14 +116,21 @@ public class _02_MemberDAOImpl implements _02_MemberDAO{
 		String sql = null;
 		try {
 			conn = DriverManager.getConnection(dbURL, dbID, dbPW);
-			System.out.println("수정할 정보 : 1. 비번, 2. 이메일, 3. 주소");
+			System.out.println("수정할 정보 : 1. 비밀번호, 2. 성별, 3. 이메일, 4. 주소");
+			System.out.println("몇 번을 바꾸시겠습니까? : ");
 			int input = sc.nextInt();
 			switch(input) {
 				case 1:
-					sql = "UPDATE jdbc_member_tb1 SET password = ? WHERE id = ?";
+					System.out.print("비밀번호를 변경하겠습니다. 변경할 비밀번호를 입력하세요 : ");
+					sql = "UPDATE jdbc_member_tb1 "
+						   + "SET password = ? "
+						   + "WHERE id = ?";
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setString(1, sc.next());
+					System.out.println();
+					System.out.print("어느 아이디의 비밀번호를 바꾸시겠습니까? : ");
 					pstmt.setString(2, sc.next());
+					System.out.println();
 					updateCnt = pstmt.executeUpdate();
 					if(updateCnt == 1) {
 						System.out.println("비밀번호 변경 완료했습니다.");
@@ -119,10 +141,36 @@ public class _02_MemberDAOImpl implements _02_MemberDAO{
 					}
 					break;
 				case 2:
-					sql = "UPDATE jdbc_member_tb1 SET email = ? WHERE id = ?";
+					System.out.print("성별을 변경하겠습니다. 변경할 성별을 입력하세요 : ");
+					sql = "UPDATE jdbc_member_tb1 "
+						   + "SET gender = ? "
+						 + "WHERE id = ?";
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setString(1, sc.next());
+					System.out.println();
+					System.out.print("어느 아이디의 성별을 바꾸시겠습니까? : ");
 					pstmt.setString(2, sc.next());
+					System.out.println();
+					updateCnt = pstmt.executeUpdate();
+					if(updateCnt == 1) {
+						System.out.println("성별 변경 완료했습니다.");
+						System.out.println();
+					}else {
+						System.out.println("성별 변경 실패했습니다.");
+						System.out.println();
+					}
+					break;
+				case 3:
+					System.out.print("이메일을 변경하겠습니다. 변경할 이메일을 입력하세요 : ");
+					sql = "UPDATE jdbc_member_tb1 "
+						   + "SET email = ? "
+						 + "WHERE id = ?";
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, sc.next());
+					System.out.println();
+					System.out.print("어느 아이디의 이메일을 바꾸시겠습니까? : ");
+					pstmt.setString(2, sc.next());
+					System.out.println();
 					updateCnt = pstmt.executeUpdate();
 					if(updateCnt == 1) {
 						System.out.println("이메일 변경 완료했습니다.");
@@ -132,11 +180,17 @@ public class _02_MemberDAOImpl implements _02_MemberDAO{
 						System.out.println();
 					}
 					break;
-				case 3:
-					sql = "UPDATE jdbc_member_tb1 SET address = ? WHERE id = ?";
+				case 4:
+					System.out.print("주소를 변경하겠습니다. 변경할 주소를 입력하세요 : ");
+					sql = "UPDATE jdbc_member_tb1 "
+					       + "SET address = ? "
+					     + "WHERE id = ?";
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setString(1, sc.next());
+					System.out.println();
+					System.out.print("어느 아이디의 주소를 바꾸시겠습니까? : ");
 					pstmt.setString(2, sc.next());
+					System.out.println();
 					updateCnt = pstmt.executeUpdate();
 					if(updateCnt == 1) {
 						System.out.println("주소 변경 완료했습니다.");
@@ -174,6 +228,7 @@ public class _02_MemberDAOImpl implements _02_MemberDAO{
 		try {
 			conn = DriverManager.getConnection(dbURL, dbID, dbPW);
 			pstmt = conn.prepareStatement(sql);
+			System.out.println("어떤 회원의 정보를 지우시겠습니까?");
 			pstmt.setString(1, sc.next());
 			
 			deleteCnt = pstmt.executeUpdate();

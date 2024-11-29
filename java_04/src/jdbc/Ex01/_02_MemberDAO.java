@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public interface _02_MemberDAO {
 	
-	public void login(String id, String pw);
+	public int login(Scanner sc);
 	
-	public int memberInsert(Scanner sc);
+	public int memberInsert(_02_MemberDTO dto, Scanner sc);
 	
 	public int memberUpdate(Scanner sc);
 	
