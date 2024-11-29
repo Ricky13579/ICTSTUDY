@@ -1,7 +1,7 @@
 package jdbc.Ex02;
 
 public class BookDTO {
-	private int bookNo;
+	private int bookNo; 
 	private String bookTitle;
 	private String bookAuthor;
 	private int price;
