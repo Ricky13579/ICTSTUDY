@@ -50,8 +50,7 @@ public class _02_MemberService {
 						break;
 					case 6:
 						System.out.println("시스템을 종료합니다.");
-						System.exit(0);
-						break;
+						return; // 반복문 종료
 					default:
 						System.out.println("잘못 입력하셨습니다. 다시 해주십시오");
 						break;
