@@ -10,4 +10,6 @@ public interface Book {
 	public int bookDelete(int bookNo);
 	
 	public void bookSelect(int bookNo);
+	
+	public int viewInsert(BookDTO bDTO);
 }

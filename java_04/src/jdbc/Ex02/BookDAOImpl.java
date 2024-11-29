@@ -167,6 +167,7 @@ public class BookDAOImpl implements Book{
 
 	@Override
 	public void bookSelect(int bookNo) {
+		int selectCnt = 0;
 		try {
 			String sql = "SELECT * FROM jdbc_book_tbl WHERE bookNo = ?";
 			con = DriverManager.getConnection(url, id, pw);
@@ -180,6 +181,15 @@ public class BookDAOImpl implements Book{
 				String author = rs.getString("bookAuthor");
 				int price = rs.getInt("price");
 				System.out.print(bno + ", " + title + ", " + author + ", " + price + "\n");
+				selectCnt++;
+			}
+			if(selectCnt == 1) {
+				System.out.println("selectCnt : " + selectCnt);
+				System.out.println("책 정보 조회 완료했습니다.");
+				System.out.println();
+			}else {
+				System.out.println("책 정보 조회 실패했습니다.");
+				System.out.println();
 			}
 		}
 		catch(Exception e) {
@@ -195,4 +205,45 @@ public class BookDAOImpl implements Book{
 			}
 		}
 	}
+
+	@Override
+	public int viewInsert(BookDTO bDTO) {
+		int viewInsert = 0;
+		try {
+			con = DriverManager.getConnection(url, id, pw);
+			String sql = "INSERT INTO v_jdbc_book "
+						+ "VALUES(?, ?, ?, ?)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, bDTO.getBookNo());
+			pstmt.setString(2, bDTO.getBookTitle());
+			pstmt.setString(3, bDTO.getBookAuthor());
+			pstmt.setInt(4, bDTO.getPrice());
+			
+			viewInsert = pstmt.executeUpdate();
+			if(viewInsert == 1) {
+				System.out.println("viewInsert : " + viewInsert);
+				System.out.println("책 정보 입력 완료했습니다.");
+				System.out.println();
+			}else {
+				System.out.println("책 정보 입력 실패했습니다.");
+				System.out.println();
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				if(pstmt != null)pstmt.close();
+				if(con != null)con.close();
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return viewInsert;
+	}
+	
+	
 }

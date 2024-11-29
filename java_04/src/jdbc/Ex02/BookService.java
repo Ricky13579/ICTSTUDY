@@ -12,11 +12,13 @@ public class BookService {
 		bDTO.setBookTitle(sc.next());
 		bDTO.setBookAuthor(sc.next());
 		bDTO.setPrice(sc.nextInt());
-		
+	
 		book.bookInsert(bDTO);
+		book.viewInsert(bDTO);
 		book.bookSelect(sc.nextInt());
-//		book.bookDelete(sc.nextInt());
+		book.bookDelete(sc.nextInt());
 		book.bookUpdate(sc, bDTO);
+		sc.close();
 		
 	}
 }
