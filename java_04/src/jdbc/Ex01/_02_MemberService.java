@@ -16,14 +16,17 @@ public class _02_MemberService {
 		System.out.print("◇ yes / no : ");
 		String login = sc.nextLine();
 		boolean islogin = false;
+		
 		switch(login) {
 			case "yes":
 				int cnt = dao.login(sc);
+				
 				if(cnt == 1) {
 					islogin = true;
 				}else {
 					islogin = false;
 				}
+				
 				while(islogin) {
 				System.out.println("*---------------------------------------------*");
 				System.out.println("1. 추가  2. 수정  3. 삭제  4. 조회   5. 종료");
@@ -46,9 +49,6 @@ public class _02_MemberService {
 						dao.memberSelect(sc);
 						break;
 					case 5:
-						dao.login(sc);
-						break;
-					case 6:
 						System.out.println("시스템을 종료합니다.");
 						return; // 반복문 종료
 					default:
@@ -57,10 +57,12 @@ public class _02_MemberService {
 					}
 				}
 				break;
+				
 			case "no":
 				System.out.println("안녕히 가십시오~~~");
 				System.exit(0);
 				break;
+				
 			default :
 				System.out.println("yes나 no중에서 입력을 해주십시오");
 				break;
