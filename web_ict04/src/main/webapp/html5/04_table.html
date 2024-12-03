@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블 생성</title>
+</head>
+<body>
+	
+	<!-- 
+		colspan : 열 합치기
+		rowspan : 행 합치기
+	 -->
+	 <h3>이력서 작성</h3>
+	 <table border="1" width="1000" height="800">
+	 <!-- 사진, 이름, 생년월일, 주소, 연락처, 교육사항(과정명, 기간, 장소), 자기소개(성격, 취미, 특기) -->
+		<caption style = "font-size: 20px;">이 력 서</caption>
+	 	<tr height=50>
+	 		<td rowspan="3" width=150><img src="./images/nika.jpg" width=150 height = 200 border="1" alt = "사 진"></td>
+	 		<th rowspan="2" style="background-color : pink">성명</th>
+	 		<td colspan="2">(한글)</td>
+	 		<th style="background-color : pink">생년월일</th>
+	 		<td colspan="2"></td>
+	 	</tr>
+	 	<tr height=50>
+	 		<td colspan="2">(영문)</td>
+	 		<th style="background-color : pink">이메일</th>
+	 		<td colspan="2"></td>
+	 	</tr>
+	 	<tr height=50>
+	 		<th style="background-color : pink">현주소</th>
+	 		<td colspan="2"></td>
+	 		<th style="background-color : pink">휴대폰</th>
+	 		<td colspan="2"></td>
+	 	</tr>
+
+	 	<tr height=25>
+	 		<th rowspan="5" style="background-color : lightgray">학력사항</th>
+	 		<th style="background-color : lightgray">졸업일</th>
+	 		<th style="background-color : lightgray">학교명</th>
+	 		<th style="background-color : lightgray">전공</th>
+	 		<th style="background-color : lightgray">졸업여부</th>
+	 		<th style="background-color : lightgray">소재지</th>
+	 		<th style="background-color : lightgray">성적</th>
+	 	</tr>
+	 	<tr height=25>
+	 		<td style="text-align: right"> 년 월</td>
+	 		<td style="text-align: right"> 고등학교</td>
+	 		<td></td>
+	 		<td></td>
+	 		<td></td>
+	 		<td style="text-align: center">/</td>
+	 	</tr>
+	 	<tr height=25>
+	 		<td style="text-align: right"> 년 월</td>
+	 		<td style="text-align: right"> 대 학</td>
+	 		<td></td>
+	 		<td></td>
+	 		<td></td>
+	 		<td style="text-align: center">/</td>
+	 	</tr>
+	 	<tr height=25>
+	 		<td style="text-align: right"> 년 월</td>
+	 		<td style="text-align: right"> 대학교</td>
+	 		<td></td>
+	 		<td></td>
+	 		<td></td>
+	 		<td style="text-align: center">/</td>
+	 	</tr>
+	 	<tr height=25>
+	 		<td style="text-align: right"> 년 월</td>
+	 		<td style="text-align: right"> 대학원</td>
+	 		<td></td>
+	 		<td></td>
+	 		<td></td>
+	 		<td style="text-align: center">/</td>
+	 	</tr>
+	 	<tr height=25>
+	 		<th rowspan="4" style="background-color : lightgray">경력사항</th>
+	 		<th colspan="2" style="background-color : lightgray">근 무 기 간</th>
+	 		<th style="background-color : lightgray">회 사 명</th>
+	 		<th style="background-color : lightgray">직 위</th>
+	 		<th style="background-color : lightgray">담 당 업 무</th>
+	 		<th style="background-color : lightgray">퇴 사 사 유</th>
+	 	</tr>
+	 	<tr height = 25>
+	 		<td style="text-align: center" colspan="2">-</td>
+	 		<td></td>
+	 		<td></td>
+	 		<td></td>
+	 		<td></td>
+	 	</tr>
+	 	<tr height = 25>
+	 		<td style="text-align: center" colspan="2">-</td>
+	 		<td></td>
+	 		<td></td>
+	 		<td></td>
+	 		<td></td>
+	 	</tr>
+	 	<tr height = 25>
+	 		<td style="text-align: center" colspan="2">-</td>
+	 		<td></td>
+	 		<td></td>
+	 		<td></td>
+	 		<td></td>
+	 	</tr>
+	 	<tr height=25>
+	 		<th rowspan="6" style="background-color : lightgray">기타사항</th>
+	 		<th style="background-color : lightgray">신 장</th>
+	 		<td style="text-align: right">cm</td>
+	 		<th style="background-color : lightgray">체 중</th>
+	 		<td style="text-align: right">cm</td>
+	 		<th style="background-color : lightgray">시 력</th>
+	 		<td style="text-align: center">/</td>
+	 	</tr>
+	 	<tr height=25>
+	 		<th style="background-color : lightgray">취 미</th>
+	 		<td style="text-align: right"></td>
+	 		<th style="background-color : lightgray">특 기</th>
+	 		<td style="text-align: right"></td>
+	 		<th style="background-color : lightgray">종 교</th>
+	 		<td style="text-align: center"></td>
+	 	</tr>
+	 	<tr height=25>
+	 		<th rowspan="4" style="background-color : lightgray">전산능력</th>
+	 		<th style="background-color : lightgray">프로그램명</th>
+	 		<th style="background-color : lightgray">활용도</th>
+	 		<th colspan="3" style="background-color : lightgray">자격증 보유 현황</th>
+	 	</tr>
+	 	<tr height=25>
+	 		<td></td>
+	 		<td></td>
+	 		<td colspan="3"></td>
+	 	</tr>
+	 	<tr height=25>
+	 		<td></td>
+	 		<td></td>
+	 		<td colspan="3"></td>
+	 	</tr>
+	 	<tr height=25>
+	 		<td></td>
+	 		<td></td>
+	 		<td colspan="3"></td>
+	 	</tr>
+	 </table>
+
+</body>
+</html>
