@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>폼과 관련된 태그들</title>
+<style>
+   fieldset {
+      /*  {속성명: 속성값} */
+      /*  margin: 바깥여백,  padding:안쪽여백  */
+      max-width:  530px;  /* 최대폭 */
+      margin: 15px 10px;  /*  상하여백:15px   좌우여백:10px  */
+   }
+   
+   legend {
+      font-size: 18px;   /* 글자크기 */
+      font-weight: bold;  /* 글자굵기 */
+      color: blue;        /* 글자색 */
+   }
+   
+   label {
+      font-size: 14px;   /* 글자크기 */
+      font-weight: bold;  /* 글자굵기 */
+      width: 120px;        /* 너비 */
+   }
+</style>
+
+<script type="text/javascript">
+	function zipcodeSearch(){
+		alert("우편번호를 입력하시오");
+	}
+</script>
+</head>
+<body>
+	<h3>폼과 관련된 태그들</h3>
+	
+	<form action="#" method="post">
+		<fieldset>
+			<legend>검색</legend>
+			<table>
+				<tr>
+					<td>
+						<input type="search">
+					</td>
+					<td>
+						<input type="submit" value="검색">
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+		
+		<fieldset>
+			<legend>우편번호 검색</legend>
+			<table>
+				<tr>
+					<td colspan=2>
+						<!-- input type="button"이면 action에서 지정한 페이지로 이동하지 않는다. -->
+						<input type="button" value="우편변호 검색" onclick="zipcodeSearch()"><!-- 버튼 클릭시 함수 호출(우편번호 찾기) -->
+					</td>
+				<tr>
+			</table>
+		</fieldset>
+		
+		<fieldset>
+			<legend>파일 첨부하기</legend>
+			<table>
+				<tr>
+					<td>
+						<label for="attachFile"></label>
+					</td>
+					<!-- '파일선택' 버튼을 클릭 => 파일열기 창에서 원하는 파일을 선택해서 가져옴. "선택된 파일 없음" => 선택된 파일명으로 변경 -->
+					<td>
+						<input type="file" id="attachFile">
+					</td>
+				<tr>
+			</table>
+		</fieldset>
+		
+		<fieldset>
+			<legend>조회기간 선택</legend>
+			<table>
+				<tr>
+					<td><label for="startmonth">현재월</label></td>
+					<td><input type="month" id="startmonth" value="2024-12"></td>
+				</tr>
+				
+				<tr>
+					<td><label for="startDay">시작일</label></td>
+					<td><input type="date" id="startDay"> ~ </td>
+					
+					<td><label for="endDay">종료일</label></td>
+					<td><input type="date" id="endDay"></td>
+				</tr>
+				
+				<tr>
+					<td><label for="startweek">개강주</label></td>
+					<td><input type="week" id="startweek"></td>
+				</tr>
+				
+				<tr>
+					<td><label for="starttime">시작시간</label></td>
+					<td><input type="time" id="starttime"></td>
+					
+					<td><label for="endtime">종료시간</label></td>
+					<td><input type="time" id="endtime"></td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+</body>
+</html>
