@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>select box - 여러 데이터를 나열해서 보여주기</title>
+<style>
+   fieldset {
+      /*  {속성명: 속성값} */
+      /*  margin: 바깥여백,  padding:안쪽여백  */
+      max-width:  530px;  /* 최대폭 */
+      margin: 15px 10px;  /*  상하여백:15px   좌우여백:10px  */
+   }
+   
+   legend {
+      font-size: 18px;   /* 글자크기 */
+      font-weight: bold;  /* 글자굵기 */
+      color: blue;        /* 글자색 */
+   }
+   
+   label {
+      font-size: 14px;   /* 글자크기 */
+      font-weight: bold;  /* 글자굵기 */
+      width: 120px;        /* 너비 */
+   }
+</style>
+</head>
+<body>
+	<h3>select box - 여러 데이터를 나열해서 보여주기</h3>
+	
+	<form action="#" method="post">
+		<fieldset>
+			<legend>수강신청</legend>
+			<table>
+				<tr>
+					<td><label for="stdNum">학번</label></td>
+					<td>
+						<input type="number" id="stdNum" min="0" max="100" value="1" autofocus required>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="stdName">이름</label></td>
+					<td>
+						<input type="text" id="stdName" size="30">
+					</td>
+				</tr>
+				<tr>
+					<td><label for="major">학과</label></td>
+					<td>
+						<select size="5" id="major" multiple>
+							<optgroup label="공과대학">
+								<option value="computer">컴퓨터공학</option>
+								<option value="multi">멀티미디어</option>
+								<option value="electro">전자공학</option>
+								<option value="chemistry">화학공학</option>
+								<option value="mecha">기계공학</option>
+								<option value="materials">신소재공학</option>
+							</optgroup>
+							
+							<optgroup label="인문대학">
+								<option value="kor">국문과</option>
+								<option value="eng">영문과</option>
+								<option value="china">중국어학과</option>
+								<option value="philasophy">철학과</option>
+								<option value="japan">일본어학과</option>
+								<option value="france">프랑스학과</option>
+							</optgroup>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+</body>
+</html>
