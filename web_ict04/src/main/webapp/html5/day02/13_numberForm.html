@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>폼과 관련된 태그들</title>
+<style>
+   fieldset {
+      /*  {속성명: 속성값} */
+      /*  margin: 바깥여백,  padding:안쪽여백  */
+      max-width:  530px;  /* 최대폭 */
+      margin: 15px 10px;  /*  상하여백:15px   좌우여백:10px  */
+   }
+   
+   legend {
+      font-size: 18px;   /* 글자크기 */
+      font-weight: bold;  /* 글자굵기 */
+      color: blue;        /* 글자색 */
+   }
+   
+   label {
+      font-size: 14px;   /* 글자크기 */
+      font-weight: bold;  /* 글자굵기 */
+      width: 120px;        /* 너비 */
+   }
+</style>
+</head>
+<body>
+	<h3>폼과 관련된 태그들</h3>
+	
+	<form action="#" method="post">
+		<fieldset>
+			<legend>지원현황</legend>
+			<table>
+				<tr>
+					<td>
+						<label for="mem_number">
+							참여인원<small>(최대 10명)</small>
+						</label>
+					</td>
+					<td>
+						<input type="number" id="mem_number" value="1" min="0" max="10" step="1">
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<label for="m_number">
+							지원물품<small>(1인당 5개)</small>
+						</label>
+					</td>
+					<td>
+						<input type="number" id="m_number" value="5" min="0" max="50" step="5">
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<label for="level">
+							희망단계<small>(상, 중, 하)</small>
+						</label>
+					</td>
+					<td>
+						<small>상</small>
+						<input type="range" id="level" value="1" min="1" max="3" step="1">
+						<small>하</small>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+		
+		<fieldset>
+			<legend>progress 태그 - 진행상태 보여주기</legend>
+			<table>
+				<tr>
+					<!-- 전체 60초 중에서 50초 진행 -->
+					<td><label>10초 남음</label></td>
+					<td><progress value="50" max="60"></progress></td>
+				</tr>
+				
+				<tr>
+					<!-- 100% 중에서 20% 진행 -->
+					<td><label>진행률 20%</label></td>
+					<td><progress value="20" max="100"></progress></td>
+				</tr>
+				
+				<tr>
+					<!-- 전체 1중에서 0.7 진행 -->
+					<!-- meter : 전체 크기중에서 얼마나 차지하는지를 표시할 때 사용
+						예 ) 하드디스크 용량, 유권자 투표율	
+					 -->
+					<td><label>점유율 0.7</label></td>
+					<td><meter value="0.7" max="1"></meter></td>
+				</tr>
+				
+				<tr>
+					<!-- 전체크기(min ~ max)는 1024~10240이며, value가 high를 벗어나면 노랑, high이내에는 초록으로 표현 -->
+					<td><label>트래픽 초과</label></td>
+					<td><meter value="9000" min="1024" max="10240" high="8000" low="1024"></meter></td>
+				</tr>
+				
+				<tr>
+					<!-- 전체크기 1중에서 0.7을 차지하고 있으며, 적정도를 0.7로 설정 -->
+					<td><label>적절한 트래픽</label></td>
+					<td><meter optimum="0.7" value="0.8"></meter></td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+</body>
+</html>
