@@ -5,9 +5,27 @@
 <title>form - 로그인(중요)</title>
 </head>
 <body>
+
+
+<!--	화면입력값 -> submit에 의해 톰캣 -> DB -> action에서 지정한 결과페이지로 이동
+	<input type="submit" value="전송">
+	=> 사용자가 폼요소들에 입력한 내용을 모두 웹서버(톰캣)으로 전송한다.
+	
+	 action="응답할 페이지 url"
+	 method="post" => 폼에 입력한 값들이 url상에 노출되는 방식
+	 
+	 method="get" => 폼에 입력한 값들이 url상에 노출되는 방식
+	 => 쿼리스트링 => http://localhost/플젝명/폴더명/소스파일명?userID=ricky&userPwd=1234
+	 http://localhost/web_ict04/html5/day02/07_form.html?userID=ricky&userPwd=1234
+	 
+	 프론트엔드 소스는 webapp 하위에 작성한다.
+	 
+	 input name == (setter) DTO의 멤버변수 == (getter) TABLE의 컬럼명
+ -->
+
 	<h3>로그인</h3>
 
-	<form action="" method="">
+	<form action="07_form_next.html" method="get">
 		ID : <input type="text" name="userID" size="30"><br>
 		비밀번호 : <input type="password" name="userPwd" size="30"><br><br>
 		
