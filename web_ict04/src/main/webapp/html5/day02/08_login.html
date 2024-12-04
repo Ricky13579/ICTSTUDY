@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	fieldset {
+		/* {속성명 : 속성값} */
+		max-width: 400px;	/* 최대폭 */
+		/* margin : 바깥여백, padding : 안쪽여백 */
+		margin : 15px 10px; /* 상하여백 좌우여백*/
+	}
+	
+	legend{
+		font-size: 18px;/* 글자크기 */
+		font-weight : bold;/* 글자굵기 */
+		color : blue;/* 글자색 */
+	}
+	
+	label{
+		font-size : 14px;
+		font-weight : bold;
+		width : 120px; /* 너비 */
+	}
+	
+	table, th, td{
+		border : 1px solid black;   /* 두께, 실선, 테두리색 */
+		border-collapse : collapse; /* 중복되는 테두리를 한줄로 표시 */
+	}
+	
+	th, td{
+		padding : 10px;
+	}
+</style>
+</head>
+<body>
+
+	<!-- 
+		<fieldset> : 폼 요소들을 그룹으로 묶음
+		<legend> : 그룹의 제목
+		placeholder : 폼에 힌트 표시
+		autofocus : 폼이 실행되자마자 원하는 항목의 입력박스에 커서 표시하기
+		required : 필수항목 지정
+		
+		<form acton="이동할 페이지"> => 이동할 페이지가 없으면 404에러(FILE NOT FOUND 에러)
+	 -->
+	
+	<h3>로그인 정보</h3>
+	
+	<form action="08_login_next.html" method="post">
+		<fieldset>
+			<legend>로그인 정보</legend>
+			<table>
+				<tr>
+					<th align=right><label for="la_id">아이디</label></th>
+					<td>
+						<input type="text" id="la_id" name="userID" size="30" placeholder="공백없이 입력" autofocus required>
+					</td>
+				</tr>
+				<tr>
+					<th align=right><label for="la_password">비밀번호</label></th>
+					<td>
+						<input type="password" id="la_password" name="userPassword" size="30" placeholder="영문자 숫자 10자 이상" required>
+					</td>
+				</tr>
+				<tr>
+					<th align=right><label for="la_repassword">비밀번호 확인</label></th>
+					<td>
+						<input type="password" id="la_repassword" name="re_userPassword" size="30" placeholder="비밀번호 확인" required>
+					</td>
+				</tr>
+				<tr>
+					<td colspan=2>
+						<div align=center>
+							<input type="submit" value="전송">
+							<input type="reset" value="취소">
+						</div>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+</body>
+</html>
