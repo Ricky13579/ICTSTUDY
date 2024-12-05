@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>display 속성 - 중요</title>
+<style>
+    /* margin : 요소간의 여백(바깥여백) */
+    /* padding : 콘텐츠 내용과 테두리 사이의 여백(안쪽여백) */
+
+    /* 상위요소 하위요소 */
+    #inline img{
+        display: inline;    /* 항목을 옆으로 한줄로 배치 */
+        margin: 10px;
+    }
+
+    #block img{
+        display: block;    
+        margin: 20px; 
+    }
+</style>
+</head>
+<body>
+    <h3>display 속성 - 화면 배치방법 결정하기</h3>
+   <!-- 중요
+   1. 블록 레벨 요소
+      . 요소를 삽입했을 때 혼자 한줄을 차지하는 요소
+      . 항목을 아래로 한줄로 배치
+      . 요소의 너비가 100%
+      . 예) <div><p><hn>...
+   
+   2. 인라인 레벨 요소.. display 속성을 지정안하면 인라인이 디폴트
+      . 요소를 삽입했을 때 혼자 한줄을 차지하지 않는 요소
+      . 항목을 옆으로 한줄로 배치
+      . 화면에 표시하는 컨텐츠만큼 영역을 차지하고, 나머지 공간에는 다른 요소가 올 수 있음
+      . 예) <img><span>...
+    -->
+
+    inline 속성<br>
+    <div id="inline">
+        <img src="../../images/css3/8장/pic1.jpg" width="300" height="300">
+        <img src="../../images/css3/8장/pic2.jpg" width="300" height="300">
+        <img src="../../images/css3/8장/pic3.jpg" width="300" height="300">
+    </div>
+    
+    block 속성<br>
+    <div id="block">
+        <img src="../../images/css3/8장/pic1.jpg" width="300" height="300">
+        <img src="../../images/css3/8장/pic2.jpg" width="300" height="300">
+        <img src="../../images/css3/8장/pic3.jpg" width="300" height="300">
+    </div>
+</body>
+</html>
