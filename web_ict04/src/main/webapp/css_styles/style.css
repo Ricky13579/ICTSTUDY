@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+/* 파일생성 : new > CSS File > style.css    
+            또는 new > other > CSS File > style.css
+*/
+
+/* 선택자 { 스타일 속성명 : 속성값; } */
+
+ul{
+    color: blue;    /* 글자색 : 파랑 */
+    list-style-type: square; /* 불릿 형태를 사각형으로 변경 */
+}
