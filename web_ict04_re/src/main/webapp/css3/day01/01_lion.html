@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사자</title>
+<link type="text/css" rel="stylesheet" href="../../css_styles/01_style.css">
+<style>
+	h3{
+		text-align: center;
+		color : rgb(223, 183, 50);
+		font-weight : bold;
+		font-size : 30px;
+		text-shadow: 5px 5px 5px #000;
+	}
+
+	.right_lion{
+		float : right;
+		margin: 10px;
+	}
+	
+	#bold{
+		font-weight: bold;
+	}
+	
+	#relation_table{
+		position : relative;
+		margin : 0 auto;
+		width : 600px;
+		height : 600px;
+		border : 1px solid red;
+	}
+	
+	.animals img{
+		width : 150px;
+		height : 150px;
+	}
+	
+	.animals{
+		position : absolute;
+		font-weight : bold;
+		text-align : center;
+	}
+	
+	#hyena{
+		left : 37.5%;
+		top : 0;
+	}
+	
+	#hippo{
+		left : 0;
+		top : 37.5%;
+	}
+	
+	#lion{
+		left : 37.5%;
+		top : 37.5%;
+	}
+	
+	#elephant{
+		right : 0;
+		top : 37.5%;
+	}
+	
+	#crocodile{
+		bottom : 0;
+		left : 37.5%;
+	}
+	
+	legend{
+		text-align: center;
+		font-weight: bold;
+	}
+</style>
+</head>
+<body>
+	<h3>사자</h3>
+	
+	<nav>
+		<ul id="menu">
+			<li><a href="#about">사자에 대해서</a></li>
+			<li><a href="#relation">다른 동물들과의 관계</a></li>
+			<li><a href="01_cats.html">메인페이지로</a></li>
+		</ul>
+	</nav>
+	<br>
+	<hr>
+	
+	<br>
+	
+	<div id="about">
+		<h3>사자에 대해서</h3>
+		<p>
+			<img src="../../images/lion.jpg" width="200" height="200" class="right_lion">
+			<span id="bold">사자(獅子)</span>는 아프리카와 인도에 서식하는 식육목(食肉目) 고양이과에 속하는 포유류이다.
+			북아프리카와 아라비아, 서남아시아, 그리스에서도 과거엔 서식했으나 그리스에서는 기원전부터 씨가 말랐고,
+			인도를 제외한 아시아 지역에서도 19~20세기부터 하나둘씩 사라져 가는 중이다.
+			북아프리카에서도 1920년 모로코에서 마지막으로 사살된 후 이 지역들의 야생 사자는 멸절된 상태이다.
+		</p>
+		<p>
+			지금은 대부분이 사하라 이남 아프리카 사바나 일대에 서식하고 있고,
+			서남아프리카의 나미비아 사막에 밀렵으로 멸종된 줄 알았던 사막 사자가 살아남아 있으며
+			사헬 지대에도 일부 살아남아 있다. 인도의 기르숲이란 곳에도 사자가 약간 남아있기는 하다.
+			현재도 개체수가 계속 감소 중이기 때문에, 멸종위기 종으로 지정되어 보호받고 있다.
+			강력한 힘과 갈기로 표현되는 용맹한 이미지로, 오랫동안 <span id="bold">'백수(百獸)의 왕'</span>으로 불리면서
+			'왕'의 상징으로 여겨지는 등 인기를 누려온 동물이다.
+		</p>
+	</div>
+	
+	<br>
+	
+	<div id="relation">
+		<h3>다른 동물들과의 관계</h3>
+		
+		<fieldset id="relation_table">
+			<legend>사자와 다른 동물들 관계도</legend>
+			<div class="animals" id="hyena">
+				<img src="../../images/hyena.jpg">
+				<br>
+				라이벌이자 희생양
+			</div>
+			
+			<div class="animals" id="elephant">
+				<img src="../../images/elephant.jpg">
+				<br>
+				어쩌다 한번 이김
+			</div>
+			
+			<div class="animals" id="lion">
+				<img src="../../images/lion2.jpg">
+				<br>
+				1대1로는 약함
+			</div>
+			
+			<div class="animals" id="hippo">
+				<img src="../../images/hippo.jpg">
+				<br>
+				아무도 안 건듬
+			</div>
+			
+			<div class="animals" id="crocodile">
+				<img src="../../images/crocodile.jpg">
+				<br>
+				막상막하
+			</div>
+		</fieldset>
+	</div>
+</body>
+</html>
