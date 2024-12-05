@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+    nav ul li{
+        display: inline-block;      /* 요소는 inline 레벨로, 내용은 block 레벨로(너비, 높이, 마진) */
+        margin: 20px;
+    }
+
+    ul{
+        background-color: rgb(154, 194, 229);
+        text-align: center;
+    }
+
+    a{
+        text-decoration: none; /* 밑줄 없애기 */
+        color: white;       /* 글자색 : 흰색 */
+        font-weight: bold;    /* 글자 : 굵게 */
+    }
+</style>
+</head>
+<body>
+    
+    <h3>display - 화면 배치방법 결정하기</h3>
+    <nav>
+        <ul>
+            <li><a href="#">애완견 종류</a></li>
+            <li><a href="#">입양하기</a></li>
+            <li><a href="#">건강 돌보기</a></li>
+            <li><a href="#">더불어 살기</a></li>
+        </ul>
+    </nav>
+
+    <!-- 중요
+   1. 블록 레벨 요소
+      . 요소를 삽입했을 때 혼자 한줄을 차지하는 요소
+      . 항목을 아래로 한줄로 배치
+      . 요소의 너비가 100%
+      . 예) <div><p><hn>...
+   
+   2. 인라인 레벨 요소.. display 속성을 지정안하면 인라인이 디폴트
+      . 요소를 삽입했을 때 혼자 한줄을 차지하지 않는 요소
+      . 항목을 옆으로 한줄로 배치
+      . 화면에 표시하는 컨텐츠만큼 영역을 차지하고, 나머지 공간에는 다른 요소가 올 수 있음
+      . 예) <img><span>...
+      
+   3. inline-block
+      . 요소는 inline 레벨로 배치하면서, 내용은 block 레벨로 지정(너비, 높이, 마진)
+      
+   4. none : 해당 요소를 배치하지 않음   
+    -->
+</body>
+</html>
