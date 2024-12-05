@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>text-shadow</title>
+<style>
+    h1{
+        font-size: 100px;       /* 글자 크기 */
+        font-family: "돋움";    /* 글꼴 */
+    }
+
+    /* 텍스트 그림자 <가로길이: 양수->오른쪽> <세로길이: 양수->아래로> <번짐정도> <색상>    */
+    #shadow1{
+        color: orange;  /* 글자색 */
+        text-shadow: 10px 10px 10px #000;   /* #000 : 검정색 */
+    }
+
+    #shadow2{
+        color: orange;
+        text-shadow: -10px -10px 10px #000;
+    }
+
+    #shadow3{
+        color: green;
+        text-shadow: -10px -10px 10px #f00;
+    }
+</style>
+</head>
+<body>
+    <h1 id="shadow1">HTML5</h1>
+    <h1 id="shadow2">HTML5</h1>
+    <h1 id="shadow3">CHRISTMAS</h1>
+</body>
+</html>
