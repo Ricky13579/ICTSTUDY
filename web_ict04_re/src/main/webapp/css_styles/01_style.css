@@ -1,0 +1,19 @@
+@charset "UTF-8";
+nav ul li{
+		list-style-type: none;
+		display : inline-block;
+		margin : 20px;
+	}
+	
+	ul{
+		background-color: brown;
+		width : 600px;
+		text-align: center;
+		font-weight: bold;
+		margin : 0 auto;
+	}
+	
+	a{
+		text-decoration : none;
+		color : white;
+	}
