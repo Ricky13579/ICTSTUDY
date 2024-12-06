@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가상클래스 - :nth-child(n)와 :nth-last-child(n)</title>
+<style>
+	/*      :nth-child(n)와 :nth-last-child(n)
+            - :nth-child(n) -> 앞에서부터 n번째 자식 요소에 스타일 적용
+            - :nth-last-child(n) -> 뒤에서부터 n번째 자식 요소에 스타일 적용
+
+            예) div p:nth-child(3) -> div 요소중에서 3번째 자식요소인 p요소에 스타일 적용
+            예) div p:nth-child(odd) | div p:nth-child(2n+1)-> div 요소중에서 홀수번째 자식요소인 p요소에 스타일 적용
+            예) div p:nth-child(even) | div p:nth-child(2n+1)-> div 요소중에서 짝수번째 자식요소인 p요소에 스타일 적용
+    */
+    table tr:nth-child(odd){
+        background-color: lightgray;
+    }
+
+    table tr:nth-child(even){   
+        background-color: lightblue;
+    }
+</style>
+</head>
+<body>
+    <h3>세계 10대 건강식품</h3>
+    <table border="1">
+        <tr>
+            <td>블루베리</td>
+        </tr>
+        <tr>
+            <td>블루베리</td>
+        </tr>
+        <tr>
+            <td>블루베리</td>
+        </tr>
+        <tr>
+            <td>블루베리</td>
+        </tr>
+        <tr>
+            <td>블루베리</td>
+        </tr>
+        <tr>
+            <td>블루베리</td>
+        </tr>
+        <tr>
+            <td>블루베리</td>
+        </tr>
+        <tr>
+            <td>블루베리</td>
+        </tr>
+        <tr>
+            <td>블루베리</td>
+        </tr>
+        <tr>
+            <td>블루베리</td>
+        </tr>
+    </table>
+</body>
+</html>

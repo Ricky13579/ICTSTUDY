@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가상클래스 - :first-child와 :last-child</title>
+<style>
+    /* 
+        :first-child - 첫번째 자식 요소 스타일 적용
+        :last-child - 마지막번째 자식 요소 스타일 적용
+    */
+    ul.navi li{
+        list-style-type: none; /* 불릿없애기 */
+        width: 120px;
+        height: 50px;
+        float: left;            /* 왼쪽 배치 */
+        text-align: center;     /* 가운데 정렬 */
+        border: 1px solid green; /* 테두리 */
+    }
+
+    /* 왼쪽 모서리를 둥글게 */
+    ul.navi li:first-child{
+        border-top-left-radius: 1em;
+        border-bottom-left-radius: 1em;
+    }
+
+    /* 오른쪽 모서리를 둥글게 */
+    ul.navi li:last-child{
+        border-top-right-radius: 1em;
+        border-bottom-right-radius: 1em;
+    }
+</style>
+</head>
+<body>
+    <h3>가상클래스 - :first-child와 :last-child</h3>
+    <div>
+        <ul class="navi">
+            <li class="home"><a href="#">HOME</a></li>
+            <li class="html"><a href="#">HTML5</a></li>
+            <li class="css"><a href="#">CSS5</a></li>
+            <li class="jquery"><a href="#">jQuery</a></li>
+        </ul>
+    </div>
+</body>
+</html>
