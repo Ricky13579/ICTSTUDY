@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성선택자</title>
+<style>
+    /*  속성 선택자
+        3.  [속성 ~= 값] 선택자 - 속성 중 해당 값이 포함되어 있는 요소에 스타일 적용하기
+    */
+    a[class ~= "button"]{
+        box-shadow: rgba(0, 0, 0, 0.4) 5px 5px;
+        border: 2px solid blue;
+    }
+</style>
+</head>
+<body>
+    <h3> 3.  [속성 ~= 값] 선택자 - 속성 중 해당 값이 포함되어 있는 요소에 스타일 적용하기</h3>
+
+    <ul>
+        <li><a href="#">메뉴1</a></li>
+        <li><a href="#">메뉴2</a></li>
+        <li><a href="#" class="button">메뉴3</a></li>
+        <li><a href="#" class="flat button">메뉴4</a></li>
+    </ul>
+</body>
+</html>

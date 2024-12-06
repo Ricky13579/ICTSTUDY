@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성선택자</title>
+<style>
+    /*  속성 선택자
+        1.  [속성] 선택자 - 지정한 속성에 스타일 적용하기
+    */
+
+    a[href]{
+        background: yellow;
+        text-decoration: none;
+    }
+    li{
+        list-style-type: none;
+    }
+</style>
+</head>
+<body>
+    <h3>1.  [속성] 선택자 - 지정한 속성에 스타일 적용하기</h3>
+
+    <ul>
+        <li><a>메인 메뉴 : </a></li> <!-- 미적용 -->
+        <li><a href="#">메뉴1 : </a></li> <!-- 적용 -->
+        <li><a href="#">메뉴2 : </a></li> <!-- 적용 -->
+        <li><a href="#">메뉴3 : </a></li> <!-- 적용 -->
+        <li><a href="#">메뉴4 : </a></li> <!-- 적용 -->
+    </ul>
+</body>
+</html>
