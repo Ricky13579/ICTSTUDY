@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>반응형웹 - 미디어쿼리</title>
+<style>
+    /* 예) 햄버거 아이콘 => 어떤 사이즈에서 보여줄지 지정 */
+
+	/* 처음 띄워주는 화면 */
+	body{
+		background: url(../../images/css3/13장/prod1.jpg) no-repeat fixed;
+        background-size: cover;
+	}    
+	
+    /* 기기 사이트에 따라 변경 */
+    @media screen and (max-width : 800px){
+        body{
+            background: url(../../images/css3/13장/prod2.jpg) no-repeat fixed;
+            background-size: cover;
+	    }    
+    }
+
+    @media screen and (max-width : 600px){
+        body{
+            background: url(../../images/css3/13장/prod3.jpg) no-repeat fixed;
+            background-size: cover;
+	    }    
+    }
+
+    @media screen and (max-width : 500px){
+        body{
+            background: url(../../images/css3/13장/friends.jpg) no-repeat fixed;
+            background-size: cover;
+	    }    
+    }
+</style>
+</head>
+<body>
+    <h3>반응형웹 - 미디어쿼리</h3>
+</body>
+</html>
