@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성선택자</title>
+<style>
+    /*  속성 선택자
+        7.  [속성 *= 값] 선택자 - 속성 중 값의 일부가 일치하는 속성을 가진 요소에 스타일 적용하기
+    */
+
+    /* 1번 */
+    a[href *= "zilla"]{
+        text-decoration: none;
+        padding: 15px;
+    }
+
+</style>
+</head>
+<body>
+    <h3>  7.  [속성 *= 값] 선택자 - 속성 중 값의 일부가 일치하는 속성을 가진 요소에 스타일 적용하기 </h3>
+
+    <ul>
+        <li>외국어 서비스 :</li>
+        <li><a href="http://developer.mozilla.org/ko/docs/Web/HTTP/Status/">모질라 상태 코드</a></li><!-- 적용 -->
+        <li><a href="http://www.naver.com">네이버</a></li><!-- 미적용 -->
+        <li><a href="http://www.youtube.com/results?search_query=godzilla">유튜브 godzilla 검색</a></li><!-- 적용 -->
+    </ul>
+</body>
+</html>
