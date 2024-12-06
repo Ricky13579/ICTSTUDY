@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성선택자</title>
+<style>
+    /*  속성 선택자
+        4.  [속성 |= 값] 선택자 - 속성 중 특정 값이 포함되어 있는 요소에 스타일 적용하기
+        하이픈으로 연결된 경우도 포함
+    */
+
+    /* 1번 */
+    a[title |= "us"]{
+        background: url(../../images/css3/12장/us.png) no-repeat left center;
+        padding: 5px 25px;
+    }
+
+    /* 2번 */
+    a[title |= "jap"]{
+        background: url(../../images/css3/12장/jp.png) no-repeat left center;
+        padding: 5px 25px;
+    }
+</style>
+</head>
+<body>
+    <h3>  4.  [속성 |= 값] 선택자 - 속성 중 특정 값이 포함되어 있는 요소에 스타일 적용하기</h3>
+    <h3>    하이픈으로 연결된 경우도 포함</h3>
+
+    <ul>
+        <li>외국어 서비스 :</li>
+        <li><a href="#" title="us">영어</a></li><!-- 1번 적용 -->
+        <li><a href="#" title="us-english">영어</a></li><!-- 1번 적용 -->
+        <li><a href="#" title="japanese">일본어</a></li><!-- 미적용 -->
+        <li><a href="#" title="jap">일본어</a></li><!-- 2번 적용 -->
+        <li><a href="#" title="jap-japanese">일본어</a></li><!-- 2번 적용 -->
+    </ul>
+</body>
+</html>
