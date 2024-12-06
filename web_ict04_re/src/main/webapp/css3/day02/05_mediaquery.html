@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>미디어쿼리</title>
+<style>
+	#box{
+		background-color: grey;
+		width : 800px;
+		height : 800px;
+	}
+	
+	@media screen and (max-width:1024px){
+		#box{
+			background-color: blue;
+			width : 600px;
+			height : 600px;
+		}
+	}
+	
+	@media screen and (max-width:768px){
+		#box{
+			background-color: green;
+			width : 400px;
+			height : 400px;
+		}
+	}
+	
+	@media screen and (max-width:500px){
+		#box{
+			background-color: red;
+			width : 200px;
+			height : 200px;
+		}
+	}
+	
+</style>
+</head>
+<body>
+		<div id="box"></div>
+</body>
+</html>
