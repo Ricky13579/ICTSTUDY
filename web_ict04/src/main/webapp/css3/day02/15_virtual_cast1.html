@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가상클래스</title>
+<style>
+/*
+    1. 가상클래스 형식 - :클래스
+                  사용자 동작에 반응하는 가상클래스
+        1) :link - 방문하지 않은 링크에 스타일 적용
+        2) :visited - 방문한 링크에 스타일 적용
+        3) :hover - 웹 요소에 마우스 커서를 올려놓을 때의 스타일 적용
+        4) :focus - 웹 요소에 초점이 맞추어졌을 때의 스타일 적용
+        5) :active - 웹 요소를 활성화했을 때의 스타일 적용
+    
+        주의사항) 가상 선택자를 링크와 관련해 사용할 때는 선택자 순서에 주의
+            (1 -> 2 -> 3 -> 4 -> 5)
+            이 순서가 바뀌면 스타일을 적용하더라도 제대로 작동하지 않는다.
+
+    2. 가상요소 형식 - ::가상요소
+*/
+    .navi a:link, .navi a:visited{
+        padding: 10px 5px 5px 35px; /* 안쪽 여백 */
+        display: block;
+        width: 150px;
+        text-decoration: none;
+    }
+
+    .navi a:hover, .navi a:focus{
+        text-shadow: 0px 2px 2px #000;
+        color: pink;
+    }
+
+    .navi a:active{
+        color:cyan;
+    }
+</style>
+</head>
+<body>
+    <h3>가상클래스</h3>
+
+    <nav class="navi">
+        <ul>
+            <li><a href="#">애완견 종류</a></li>
+            <li><a href="#">입양하기</a></li>
+            <li><a href="#">건강 돌보기</a></li>
+            <li><a href="#">더불어 살기</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
