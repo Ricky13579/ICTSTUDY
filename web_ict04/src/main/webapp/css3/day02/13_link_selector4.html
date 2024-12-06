@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연결선택자 - 형제 선택자</title>
+<style>
+/* 연결선택자
+    4.  형제 선택자 - 모든 형제 요소에만 스타일 적용하기
+    형식 : 요소1(=형) ~ 요소n(=동생){속성 : 속성값; .....}
+*/
+    p ~ ul{
+        color: navy;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+    <h3>연결선택자 - 형제 선택자</h3>
+    <!--  4.  형제 선택자 - 모든 형제 요소에만 스타일 적용하기 -->
+
+    <header><h3>예약방법 및 요금</h3></header>
+
+    <section id="container">
+        <p>끌레르 펜션에 예약하려면?</p>
+
+        <ul>
+            <li>직접 통화</li>
+            <li>문자남기기</li>
+        </ul>
+
+        <ul>
+            <li>1인 : 30,000</li>
+            <li>2인 : 60,000</li>
+            <li>3인 : 90,000</li>
+            <li>4인 : 100,000</li>
+        </ul>
+    </section>
+</body>
+</html>
