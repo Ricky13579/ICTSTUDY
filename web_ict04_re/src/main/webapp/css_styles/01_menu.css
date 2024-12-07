@@ -1,0 +1,95 @@
+@charset "UTF-8";
+	.naver {
+        width: 100%;
+        background-color: rgb(88, 214, 88);
+        overflow: hidden;
+    }
+    
+	.naver ul {
+        list-style-type: none;
+	}
+
+    .naver li {
+        float: left; /* 가로 정렬을 위해 float 사용 */
+        margin: 5px; /* 간격 조정 */
+    }
+    
+    #home{
+    	font-size : 20px;
+    }
+
+    .naver li a {
+        text-decoration: none;
+        color: white; /* 링크 텍스트 색상 지정 */
+        font-weight: bold;
+    }
+
+    #search_container input[type="search"] {
+        margin-right: 5px;
+        padding: 5px;
+    }
+
+    #blog, #login, #join {
+        float: right; /* 오른쪽 정렬 */
+    }
+    
+    h3{
+    	margin : 0 auto;
+    	text-align : center;
+    }
+    
+    #honey{
+		width : 200px;
+		height : 200px;
+		float : left;
+		margin-left : 10px;
+		margin-right : 10px;
+	}
+	
+	strong{
+		text-decoration: underline;
+	}
+	
+	iframe{
+		margin-right : 10px;
+		width : 560px;
+		height : 315px;
+		float : left;
+	}
+    
+    @media screen and (max-width : 700px){
+    	.naver{
+    		display : inline-block;
+    		text-align: center;
+    	}
+    	
+    	.naver li{
+    		float : none;
+    		margin : 10px auto;
+    	}
+    	
+    	#search_container {
+        	float: none;
+    	}
+    	
+    	#search_container input[type="search"] {
+	        margin : 10px auto;
+    	}
+    	
+    	#blog, #login, #join {
+    		float : none;
+        	margin : 10px auto;
+    	}
+    	
+    	#honey{
+    		width : 150px;
+    		height : 150px;
+    	}
+    	
+    	iframe{
+	 		width : 100%;
+    		height : 315px;
+    		margin-top : 10px;
+    		float : none;
+    	}
+    }
