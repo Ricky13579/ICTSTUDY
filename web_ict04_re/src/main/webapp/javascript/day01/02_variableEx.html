@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	const home = 2;
+	const away = 0;
+	const homewin = Boolean(home > away);
+	if(homewin == true){
+		document.write(home + " VS " + away + "의 점수로 홈팀이 승리했습니다." + "<br>");
+	}else{
+		document.write(home + " VS " + away + "의 점수로 홈팀이 패배했습니다." + "<br>");
+	}
+	
+	let home1 = 2;
+	let away1 = 1;
+	let home2 = 2;
+	let away2 = 3;
+	const sumA = home1 + away2;
+	const sumB = home2 + away1;
+	if(sumA > sumB){
+		document.write("A팀이 총 합계 " + sumA + " VS " + sumB + "로 결승에 진출했습니다.");
+	}else if(sumA == sumB){
+		document.write("A팀이 총 합계 " + sumA + " VS " + sumB + "로 재대결을 진행하겠습니다.");
+	}else{
+		document.write("A팀이 총 합계 " + sumA + " VS " + sumB + "로 탈락했습니다.");
+	}
+</script>
+</head>
+<body>
+	
+</body>
+</html>
