@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>display - flex-shrink(중요)</title>
+<style>
+   .container {
+      padding-top: 100px;
+      background: beige;
+      height: 100vh;
+      display: flex;      /* 자동으로 왼쪽 -> 오른쪽으로 1줄 수평정렬 */   
+   }
+   
+   .item {
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+   } 
+   
+   /* 브라우저 창의 크기가 달라져도 비중은 동일하게 유지 */
+   .item1 {
+      background: #ef9a9a;
+      flex-shrink: 2;  /* 컨테이너가 작아졌을 때 2의 비율로 줄어든다. */
+   }
+   
+   .item2 {
+      background: #f48fb1;
+      flex-shrink: 2;  /* 컨테이너가 작아졌을 때 2의 비율로 줄어든다. */
+   }
+   
+   .item3 {
+      background: #ce93d8;
+      flex-shrink: 1;  /* 컨테이너가 작아졌을 때 1의 비율로 줄어든다. */
+   }
+</style>
+</head>
+<body>
+   <div class="container">
+      <div class="item item1">1</div>
+      <div class="item item2">2</div>
+      <div class="item item3">3</div>
+   </div>   
+</body>
+</html>

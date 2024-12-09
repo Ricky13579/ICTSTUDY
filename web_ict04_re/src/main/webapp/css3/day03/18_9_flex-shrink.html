@@ -1,0 +1,50 @@
+<title>display - flex-grow(중요)</title>
+<style>
+   .container {
+      padding-top: 100px;
+      background: beige;
+      height: 100vh;
+      display: flex;      /* 자동으로 왼쪽 -> 오른쪽으로 1줄 수평정렬 */   
+   }
+   
+   .item {
+      width: 80px;
+      height: 80px;
+      border: 1px solid black;
+   } 
+   
+   /* 브라우저 창의 크기가 달라져도 비중은 동일하게 유지 */
+   .item1 {
+      background: #ef9a9a;
+      flex-grow: 2;      /* 전체크기 비중 비율 : 2 */
+      order: 2;  /* 보여지는 순서: 2 */
+   }
+   
+   .item2 {
+      background: #f48fb1;
+      flex-grow: 2;      /* 전체크기 비중 비율 : 2 */
+      order: 1;  /* 보여지는 순서: 1 */
+   }
+   
+   .item3 {
+      background: #ce93d8;
+      flex-grow: 1;      /* 전체크기 비중 비율 : 1 */
+      order: 4;  /* 보여지는 순서: 4 */
+   }
+   
+   .item4 {
+      background: #b39ddb;
+      flex-grow: 1;      /* 전체크기 비중 비율 : 1 */
+      order: 3;  /* 보여지는 순서: 3 */
+   }
+</style>
+</head>
+<body>
+   <div class="container">
+      <div class="item item1">1</div>
+      <div class="item item2">2</div>
+      <div class="item item3">3</div>
+      <div class="item item4">4</div>
+   </div>   
+</body>
+</html>
