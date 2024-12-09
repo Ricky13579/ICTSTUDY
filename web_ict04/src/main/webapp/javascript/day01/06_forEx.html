@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구구단 출력</title>
+<script type="text/javascript">
+	/*
+		1. 시작단 입력  -- 테스트 10단
+		2. 종료단 입력  -- 테스트 5단
+		   시작단이 종료단보다 크면 "시작단이 종료단보다 큽니다." 출력    
+		3. 그렇지 않으면 구구단 출력
+		// let 변수명 = 숫자 또는 Number("숫자") / eval("숫자");
+		=== x단 ===
+	*/
+	
+	let start = Number(prompt("시작단 입력", 0));
+	let end = Number(prompt("종료단 입력", 0));
+	
+	if(start > end){
+		document.write("시작단이 종료단보다 큽니다.");
+	}else{
+		for(let i = start; i <= end; i++){
+			document.write("=== " + i + "단 ===" + "<br>");
+			for(let j = 1; j <= 9; j++){
+				document.write(i + " * " + j + " = " + +(i*j) + "<br>");
+			}
+			document.write("==========<br>");
+			document.write("<br>");
+		}
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
