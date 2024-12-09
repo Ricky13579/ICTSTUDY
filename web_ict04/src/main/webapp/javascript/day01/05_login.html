@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+		1. 변수값 초기화
+		   id="hong", pwd="hong1234";
+		2. id, pwd 값을 입력받는다.(prompt 활용)
+		
+		3. id가 일치했을 때
+		   1) 비밀번호가 일치했을 때
+		   => "~님 반갑습니다." 경고창 출력
+		             페이지 이동 : location.href="이동페이지"; 05_loginOK.html
+		             
+		   2) 비밀번호가 불일치했을 때
+		      => "비밀번호가 일치하지 않습니다." 경고창 출력
+		                페이지 이동 : location.href="이동페이지"; 05_loginNG.html
+		    
+		    id가 불일치했을 때
+		    => "id가 일치하지 않습니다." 경고창 출력
+		    페이지 이동 : location.href="이동페이지"; 05_loginNG.html
+	*/
+	const id = prompt("아이디 입력", "");
+	if(id == "hong"){
+		const pwd = prompt("비밀번호 입력", "");
+		if(pwd == "hong1234"){
+			alert(id+"님 반갑습니다.");
+			location.href="05_loginOK.html";
+		}else{
+			alert("비밀번호가 일치하지 않습니다.");
+			location.href="05_loginNG.html";
+		}
+	}else{
+		alert("id가 일치하지 않습니다.");
+		location.href="05_loginNG.html";
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
