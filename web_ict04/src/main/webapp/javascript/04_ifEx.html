@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원탈퇴 여부</title>
+<script type="text/javascript">
+	/*
+		confirm("메시지") : [확인]/[취소] 버튼을 만들어주고,
+		                        [확인] 버튼을 클릭하면 true를 반환하고,
+		                        [취소] 버튼을 클릭하면 false를 반환하는 윈도우 객체의 메서드
+		                        예) 삭제하시겠습니까?  [확인]/[취소] 
+		cf) prompt() : 질의응답창이며, 값을 입력하고, [확인]/[취소] 버튼을 만들어준다.
+		cf) alert() : 경고창은 [확인] 버튼만 있음                        
+		*/
+		
+		/*
+		Q) 회원탈퇴 여부?
+		   [확인] 버튼을 클릭하면 true를 반환하므로 "회원 탈퇴처리!!" 경고창을 띄우고 
+		   [취소] 버튼을 클릭하면 false를 반환하므로 "회원 탈퇴 취소 처리!!" 경고창을 띄운다.
+	*/
+	let user = confirm("탈퇴하시겠습니까?");
+	if(user){
+		document.write("회원 탈퇴처리!!");
+	}else{
+		document.write("회원 탈퇴 취소 처리!!");
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비만도 구하기</title>
+<script type="text/javascript">
+/*
+	prompt() : 질의응답창이며, 값을 입력하고, [확인]/[취소] 버튼을 만들어준다.
+	  cf) alert() : 경고창은 [확인] 버튼만 있음                     
+	  
+	   prompt("질의내용", "기본답변");   [확인]/[취소] 버튼
+	   
+	   if(조건식) ~ else if(조건식) ~ else
+*/
+
+/*
+	Q) 비만도 구하는 실행문 만들기
+	1. 방문자에게 질의응답창을 띄워 신장과 체중을 입력받아 각각 userHeight, userWeight 변수에 담는다.
+	2. 표준체중(변수명: standardWeight) = (신장 - 100) * 0.9;
+	3. 결과 = 
+	    방문자의 체중이 표준체중보다 초과인 경우 "과체중" 출력
+	     방문자의 체중이 표준체중보다 미만인 경우 "저체중" 출력
+	     방문자의 체중이 표준체중인 경우 "적정체중" 출력
+*/
+// 당신의 체중은 ?이고, 신장은 ?, 결과
+	let height = prompt("당신의 신장은?", 0);
+	let weight = prompt("당신의 체중은?", 0);
+	let standardWeight = (height-100) * 0.9;
+	if(standardWeight > weight){
+		document.write("당신의 신장은 : " + height + "<br>");
+		document.write("당신의 체중은 : " + weight + "<br>");
+		document.write("표준체중 : " + standardWeight + "<br>");
+		document.write("저체중");
+	}else if(standardWeight == weight){
+		document.write("당신의 신장은 : " + height + "<br>");
+		document.write("당신의 체중은 : " + weight + "<br>");
+		document.write("표준체중 : " + standardWeight + "<br>");
+		document.write("적정체중");
+	}else{
+		document.write("당신의 신장은 : " + height + "<br>");
+		document.write("당신의 체중은 : " + weight + "<br>");
+		document.write("표준체중 : " + standardWeight + "<br>");
+		document.write("과체중");
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
