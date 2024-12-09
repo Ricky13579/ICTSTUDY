@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	// 변수선언 : const 변수명; => 1번 선언후 변경불가
+	// 변수선언 : let 변수명; => 변경가능  
+	// 변수선언 : var 변수명; => 변경가능
+	
+	/*
+		1. 변수명 첫글자는 $, _, 영문자만 올수 있다.
+		2. 변수명 첫글자 다음은 영문자, 숫자, $, _만 포함할 수 있다.
+		3. 변수명으로 예약어를 사용할 수 없다.(예, document, location, window, ...)
+		4. 변수명으로 대소문자를 구분한다.
+		5. 변수명은 되도록 의미를 부여하는 것이 좋다.
+	*/
+	
+	// 1. 문자형 변수 선언
+	// const 변수명 = "값";
+	const str = "여러분의 행복지수는?";
+	const num1 = "100";
+	const num2 = "90";
+	const num3 = "80";
+	
+	// 각각의 변수에 저장된 값을 줄바꿈하여 출력
+	document.write(str+ "<br>" + num1 + "<br>" + num2 + "<br>" + num3 + "<br>");
+	document.write("--------------------<br>");
+	
+	// 에러 => const 변수명; => 1번 선언 후 대입불가
+	/* str = "여러분의 행복지수는?";
+	num1 = "100";
+	num2 = "90";
+	num3 = "80";
+	
+	// 각각의 변수에 저장된 값을 줄바꿈하여 출력
+	document.write(str+ "<br>" + num1 + "<br>" + num2 + "<br>" + num3 + "<br>");
+	document.write("--------------------<br>"); */
+	
+	
+	// 2. 숫자형 변수 선언
+	// const 변수명 = 숫자 또는 Number("숫자");
+	// let 변수명 = 숫자 또는 Number("숫자");
+	const kor = 100;
+	const eng = 90;
+	const math = 80;
+	const total = kor + eng + math;
+	
+	// 합계 : 100 + 90 + 80 = 270
+	document.write("합계 : " + kor + " + " + eng + " + " + math + " = " + total + "<br>");
+	document.write("숫자 변환 : " + Number(num3) + "<br>");
+	document.write("----------------<br>");
+	   
+   // 3. 논리형 변수 선언
+   // let 변수명 = true | false | Boolean(데이터) 
+   // => 데이터가 존재하면 true, 존재하지 않으면 false
+   const bool1 = true;
+   document.write("bool1 : " + bool1 + "<br>");
+   
+   const bool2 = 100 > 999999;
+   document.write("bool2 : " + bool2 + "<br>");
+   
+	// Boolean()은 데이터가 있으면 true, 없으면 false
+   const bool3 = Boolean("Hello"); 
+   document.write("bool3 : " + bool3 + "<br>");
+   
+   const bool4 = Boolean(null);
+   document.write("bool4 : " + bool4 + "<br>");
+   
+   const bool5 = Boolean("0");
+   document.write("bool5 : " + bool5 + "<br>");
+   
+   // 숫자1 : 참	숫자0 : 거짓
+   const bool6 = Boolean(0);
+   document.write("bool6 : " + bool6 + "<br>");
+   
+   const bool7 = Boolean(1);
+   document.write("bool7 : " + bool7 + "<br>");
+   
+   document.write("----------------<br>");
+   
+	// 4. 비교연산자
+   /*
+      A == B : A와 B는 같다 : 자료형과 무관
+      A != B : A와 B는 같지 않다 : 자료형과 무관
+      A === B : A와 B는 같다 : 자료형도 일치해야 한다.
+      A !== B : A와 B는 같지 않다 : 자료형도 일치해야 한다.
+   */
+   	const k = 10, m = "10";
+   	const result1 = k != 10;
+   	document.write("result1 : " + result1 + "<br>");
+    
+   	const result2 = m == 10;
+   	document.write("result2 : " + result2 + "<br>");
+    
+   	const result3 = m === 10;
+   	document.write("result3 : " + result3 + "<br>");
+    
+</script>
+</head>
+<body>
+
+</body>
+</html>
