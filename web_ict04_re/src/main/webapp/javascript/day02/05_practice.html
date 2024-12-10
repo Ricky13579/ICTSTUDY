@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>아름다운 무지개!!!!</title>
+<script type="text/javascript">
+    let color = ["red", "orange", "yellow", "green", "blue", "navy", "purple"];
+	let color_text = ["빨강", "주황", "노랑", "초록", "파랑", "남색", "보라"];
+	let img = ["anaconda", "caiman", "elephant", "hippo", "hyena", "jaguar", "lion"];
+    let i = 0;
+	
+	function changeColor(){
+		let rainbow = document.getElementById("rainbow");
+        let text = document.getElementById("text");
+        let question = document.getElementById("question");
+        let img_src = document.getElementById("image");
+
+		rainbow.style.backgroundColor = color[i];
+        if(color_text[i] == "남색") {
+            text.innerText = color_text[i];
+            question.style.color = "white";
+        }else{
+            text.innerText = color_text[i] + "색";
+            question.style.color = "black";
+        }
+        img_src.setAttribute("src", "../../images/animals/" + img[i] + ".jpg");
+		i++;
+        if(i >= color.length) i = 0;
+	}
+
+</script>
+<style>
+    p{
+        font-weight: bold;
+        font-size: 20px;
+    }
+</style>
+</head>
+<body id="rainbow">
+    <p id="question">
+        무지개의 색깔은 7개이다. 현재 배경은 아무런 색이 없다. 그 중 이 색깔은 무엇일까?<br>
+        <span id="text"></span>
+    </p>
+	<button onclick="changeColor()">배경색은?</button>
+    <img src="" id="image" alt="동물사진" width="200px" height="300px">
+</body>
+</html>
