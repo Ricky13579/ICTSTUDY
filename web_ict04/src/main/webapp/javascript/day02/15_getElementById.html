@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+	직접 접근
+	document.getElementById(id명); => id명을 이용해서 직접 접근  
+	document.getElementsByTagName(태그); => 태그을 이용해서 직접 접근
+	document.getElementsByName(태그의 name); => 태그의 name을 이용해서 직접 접근
+	document.getElementsByClassName(class명); => class 속성을 이용해서 직접 접근
+*/
+	function styleChange(){
+		alert("스타일 변경");
+		let spanTest = document.getElementById("spanTest");
+		spanTest.style.color = "blue"
+		// 글자크기 변경
+		spanTest.style.fontSize = "20px";
+		spanTest.style.display = "block";
+		spanTest.style.width = "150px";
+		spanTest.style.border = "3px dotted magenta";
+		spanTest.style.padding = "20px";
+	}
+</script>
+</head>
+<body>
+	<h3>CSS 스타일 동적 변경</h3>
+	<hr>
+	<p style="color : blue;">
+		이것은 <span id="spanTest" style="color : red;">자바스크립트 함수 호출 문장입니다.</span>
+	</p>
+	
+	<input type="button" value="스타일 변경" onclick="styleChange()">
+</body>
+</html>
