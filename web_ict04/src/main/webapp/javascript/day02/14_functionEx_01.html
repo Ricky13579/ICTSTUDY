@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+		1) 기본형 함수 정의
+		function 함수명() {
+			자바스크립트 코드;
+		}
+		
+		호출 : 함수명();
+	*/
+	
+	document.write("====== 기본함수 ======" + "<br>");
+	let count = 0;
+	function myFunc(){
+		count++;
+		document.write("기본함수 : " + count + "<br>");
+	}
+	
+	// 호출 : 함수명();
+	myFunc(); // 1
+	myFunc(); // 2
+	
+	/*
+		2)익명함수 정의 : 함수명이 없는 경우 => 중요
+		
+		let 함수명 = function(){
+			js code;
+		}
+	*/
+	document.write("====== 익명함수 ======" + "<br>");
+	count = 0;
+	let myFunc2 = function(){
+		count++;
+		document.write("익명함수 : " + count + "<br>");
+	}
+	myFunc2();
+</script>
+</head>
+<body>
+
+</body>
+</html>
