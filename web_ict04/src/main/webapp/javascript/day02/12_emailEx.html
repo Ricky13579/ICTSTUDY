@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이메일 형식</title>
+<script type="text/javascript">
+
+   let email = prompt("이메일을 입력하세요!", "id@gmail.com");
+   let arrUrl = [".com", "co.kr", ".net", ".or.kr", ".org", ".go.kr", ".ac.kr"];
+   
+   /*
+   1. 방문자가 입력한 이메일주소에 "@"가 포함되어 있으면 check에 "true"를 할당한다.
+   2. indexOf("찾을 문자") : 문자열 왼쪽부터 찾을 문자와 일치하는 문자를 찾아, 제일먼저 일치하는 문자의 인덱스 번호를 반환
+                        만일 찾는 문자가 없으면 -1을 반환
+   3. 이메일형식에 일치하면 이메일 주소를 출력하고, 일치하지 않으면 에러메시지 출력 => 잘못된 형식  / @가 없습니다.                  
+   */
+   
+   let elen = email.length;
+   if(email.search("@") >= 0){
+	   for(let i = 0; i < arrUrl.length; i++){
+		   let len = arrUrl[i].length;
+		   let url = email.substring(elen - len, elen);
+		   if(url == arrUrl[i]){
+			   document.write("url 형식 : " + url + "<br>");
+			   document.write("email : " + email);
+               break;
+		   }else{
+			   if(i == arrUrl.length - 1){
+				   if(url != arrUrl[i]){
+					   document.write("잘못된 형식의 이메일입니다.");
+				   }else{
+					   document.write("email : " + email);
+				   }
+			   }
+		   }
+         }
+	   }
+   else{
+	   document.write("@가 없습니다.");
+   }
+   
+   
+</script>
+</head>
+<body>
+
+</body>
+</html>
