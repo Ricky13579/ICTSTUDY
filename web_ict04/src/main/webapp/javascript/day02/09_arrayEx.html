@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	let subway = ["사당", "방배", "서초", "교대", "강남"];
+	document.write(subway + "<br>");
+	
+	// typeof 객체명 : 배열 객체명(타입) 출력
+	document.write("타입 : " + typeof subway + "<br>");
+	document.write("<br>");
+	
+	// join(연결문자) : 연결문자("-")를 기준으로 배열값들이 하나의 문자형 데이터로 결합한다.
+	document.write("=== join(연결문자) ===" + "<br>");
+	document.write(subway.join(" - ") + "<br>");
+	document.write("<br>");
+	
+	// reverse() : 배열 객체값 순서가 뒤바뀌어 출력된다.(마지막 인덱스부터 처음 인덱스 순서로 출력)
+	document.write("=== reverse() ===" + "<br>");
+	document.write(subway.reverse().join(" - ") + "<br>");
+	document.write("<br>");
+	
+	// sort() : 배열 객체값을 오름차순(가 ~ 하)로 정렬 후 출력
+	document.write("=== sort() ===" + "<br>");
+	document.write(subway.sort().join(" - ") + "<br>");
+	document.write("<br>");
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
