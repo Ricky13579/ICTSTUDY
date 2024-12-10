@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>getElementById</title>
+<script type="text/javascript">
+
+	let color = ["red", "orange", "yellow", "green", "blue", "navy", "purple"];
+	
+	let i = 0;
+	
+	function changeColor(){
+		let bodyTag = document.getElementById("bodyTag");
+		i++;
+		if(i >= color.length) i = 0;
+		bodyTag.style.backgroundColor = color[i];
+	}
+</script>
+</head>
+<body id="bodyTag">
+	<button onclick="changeColor()">배경색 바꾸기</button>
+</body>
+</html>
