@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열 객체의 메서드 및 속성</title>
+<script type="text/javascript">
+	let greenline = ["사당", "교대", "방배", "강남"];
+	let yellowline = ["미금", "정자", "모란", "수서"];
+	
+	document.write("greenline : " + greenline + "<br>");
+	document.write("<br>");
+	
+   // 1. splice() : 배열 객체에 있는 저장데이터를 삭제하고, 그 구간에 새 데이터를 삽입할 수 있다.
+   	document.write("=== 1. splice() ===" + "<br>");
+   // 배열명.splice(삭제할 위치 index, 삭제할 값의 갯수, 추가할 값1,..값n);
+   // greenline에서 방배 삭제, 서초 역삼 추가
+    greenline.splice(2, 1 ,"서초", "역삼");
+	document.write("greenline : " + greenline + "<br>");
+	document.write("<br>");
+   
+	// 2. slice(index1, index2) : 배열 객체의 데이터 중 원하는 인덱스 구간만큼 잘라서 배열 객체로 가져온다.
+    document.write("=== 2. slice(index1, index2) ===" + "<br>");
+    // 배열명.slice(시작 인덱스, 종료인덱스 전까지);
+    document.write("greenline : " + greenline.slice(0, 3) + "<br>");
+    document.write("<br>");
+    
+    // 3. concat() : 2개의 객체를 하나로 결합한다.
+    // 배열명.concat(결합할 배열명);
+    document.write("=== 3. concat() ===" + "<br>");
+    let twoline = greenline.concat(yellowline);
+    document.write("twoline : " + twoline + " [twoline의 길이 : " + twoline.length + "]<br>");
+    document.write("<br>");
+    
+ 	// 4. pop() : 배열에 저장된 데이터 중 마지막 인덱스에 저장된 데이터를 삭제한다.
+    document.write("=== 4. pop()  ===" + "<br>");
+    // 배열명.pop();
+    // yellowline 배열의 마지막 인덱스를 삭제해서 data1에 담은 후 출력한다. yellowline도 출력한다.
+    let data1 = yellowline.pop();
+    document.write("data1 : " + data1 + "<br>");
+    document.write("yellowline : " + yellowline + "<br>");
+    document.write("<br>");
+    
+ 	// 5. shift() : 배열에 저장된 데이터 중 첫번째 인덱스에 저장된 데이터를 삭제한다.
+    document.write("===  5. shift()  ===" + "<br>");
+    // 배열명.shift();  
+    // yellowline 배열의 첫번째 인덱스를 삭제해서 data2에 담은 후 출력한다. yellowline도 출력한다.
+	let data2 = yellowline.shift();
+    document.write("data2 : " + data2 + "<br>");
+    document.write("yellowline : " + yellowline + "<br>");
+    document.write("<br>");
+    
+ 	// 6. push() : 배열 객체의 마지막 인덱스에 데이터를 삽입한다.
+    document.write("=== 6. push()  ===" + "<br>");
+    // 배열명.push("삽입값");   
+    // yellowline 배열 마지막에 data2를 추가
+    yellowline.push(data2);
+    document.write("yellowline : " + yellowline + "<br>");
+    document.write("<br>");
+    
+</script>
+</head>
+<body>
+
+</body>
+</html>
