@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>getElementById</title>
+<script type="text/javascript">
+	/*
+		직접 접근
+		document.getElementById(id명);	=> id명을 이용해서 직접 접근
+	*/
+	let num = 1;
+	function gallery(direction){
+		let photo = document.getElementById("photo");
+		if(direction == false){
+			if(num > 1){
+				num--;
+				photo.setAttribute("src", "../../images/css3/js_img/pic_" + num +".jpg");	// 속성추가 : setAtrribute(속성명, 속성값)
+			}
+		}else if(direction == true){
+			if(num < 10){
+				num++;
+				photo.setAttribute("src", "../../images/css3/js_img/pic_" + num +".jpg");
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="galleryZone">
+		<p>
+			<img src="../../images/css3/js_img/pic_1.jpg" width="200px" height="300px" id="photo">
+		</p>
+		
+		<p>
+			<button onclick="gallery(0)">이전</button>
+			<button onclick="gallery(1)">다음</button>
+		</p>
+	</div>
+</body>
+</html>
