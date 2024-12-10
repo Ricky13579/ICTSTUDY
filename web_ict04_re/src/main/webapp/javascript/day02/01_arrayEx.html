@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열 복습</title>
+<script type="text/javascript">
+	
+	document.write("=== 방법1. let 배열명 = new Array(); ===" + "<br>");
+	let arr1 = new Array();
+	arr1[0] = "내게 허락된 건";	// 문자열 3개, 숫자, true, Number("문자")
+	arr1[1] = "힘겹기만 한";
+	arr1[2] = "거친 미래라 해도";
+	arr1[3] = 3;
+	arr1[4] = true;
+	arr1[5] = Number("565");
+	arr1[6] = eval("4444");
+	
+	// for문으로 출력
+	document.write("=== [ for문으로 출력 ] ===" + "<br>");
+	for(let i = 0; i < arr1.length; i++){
+		document.write("arr1의 " + (i+1) + "번째 값 : " + arr1[i] + "<br>");
+	}
+	document.write("<br>");
+	document.write("=== [ for in 문으로 출력 ] ===" + "<br>");
+
+	// for in 반복문 출력
+    for(let i in arr1){
+    	document.write("arr1의 " + (Number(i)+1) + "번째 값 : " + arr1[i] + "<br>");
+    }
+    
+    document.write("<br>");
+    document.write("=== 방법2. let 배열명 = new Array(값1, 값2, 값3, .. 값n) ===" + "<br>");
+    let arr2 = new Array("아따맘마", "나루토", "쾌걸근육맨", 53, false, Number("4456"), eval("444"));
+    
+    document.write("for문" + "<br>");
+    for(let i = 0; i < arr2.length; i++){
+    	document.write("arr2의 " + (i+1) + "번째 값은 : " + arr2[i] + "<br>");
+    }
+    
+    document.write("<br>");
+    document.write("for in 문" + "<br>");
+    for(let i in arr2){
+    	document.write("arr2의 " + (Number(i) + 1) + "번째 값은 : " + arr2[i] + "<br>");
+    	
+    }
+    
+    document.write("<br>");
+    document.write("=== 방법3. let 배열명 = [값1, 값2, 값3, .. 값n] ===" + "<br>");
+    let arr3 = ["분신사바", "분신사바", "오이떼쿠다사이~~~", 4444, true, 4444, Number("888"), eval("548")];
+    
+    document.write("for문" + "<br>");
+    for(let i = 0; i < arr3.length; i++){
+    	document.write("arr3의 " + (i+1) + "번째 값은 : " + arr3[i] + "<br>");
+    }
+    document.write("<br>");
+    document.write("for in 문" + "<br>");
+    for(let i in arr3){
+    	document.write("arr3의 " + (Number(i) + 1) + "번째 값은 : " + arr3[i] + "<br>");
+    }
+</script>
+</head>
+<body>
+
+</body>
+</html>
