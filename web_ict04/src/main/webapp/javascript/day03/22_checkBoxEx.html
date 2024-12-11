@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>checkbox 버튼 클릭 이벤트</title>
+<style>
+	fieldset{
+		max-width : 250px;
+	}
+</style>
+<script type="text/javascript">
+	function hobbyChk(){
+		let checks = "";
+		for(let i = 0; i < document.hobbyForm.hobby.length; i++){
+			if(document.hobbyForm.hobby[i].checked){
+				checks += document.hobbyForm.hobby[i].value + " ";
+			}
+		}
+		
+		if(checks){
+			alert("좋아하는 취미 : " + checks);
+		}else{
+			alert("취미를 선택하세요!!");
+		}
+	}
+</script>
+</head>
+<body>
+    <form action="#" method="post" name="hobbyForm">
+        <fieldset>
+            <legend> 좋아하는 취미 </legend>
+            <table>
+            	<tr>
+            		<td><input type="checkbox" name="hobby" id="check_1" value="독서"></td>
+            		<td><label for="check_1">독서</label></td>
+            	</tr>
+            	<tr>
+            		<td><input type="checkbox" name="hobby" id="check_2" value="축구경기 시청"></td>
+            		<td><label for="check_2">축구경기 시청</label></td>
+            	</tr>
+            	<tr>
+            		<td><input type="checkbox" name="hobby" id="check_3" value="유튜브 시청"></td>
+            		<td><label for="check_3">유튜브 보기</label></td>
+            	</tr>
+            	<tr>
+            		<td><input type="checkbox" name="hobby" id="check_4" value="코딩테스트"></td>
+            		<td><label for="check_4">코딩테스트</label></td>
+            	</tr>
+            	<tr>
+            		<td><input type="checkbox" name="hobby" id="check_5" value="잠자기"></td>
+            		<td><label for="check_5">잠자기</label></td>
+            	</tr>
+               <tr>
+               		<td colspan="2">
+               			<div align="center">
+               				<input type="button" value="확인" onclick="hobbyChk()">
+               				<input type="reset" value="취소">
+               			</div>
+               		</td>
+               </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>
