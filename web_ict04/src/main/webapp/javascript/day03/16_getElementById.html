@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function callChange(){
+		let firstP = document.getElementById("firstP");
+		firstP.innerHTML = "나의 인형<br> <img src='../../images/css3/8장/pic3.jpg'>";
+	}
+</script>
+</head>
+<body>
+	<h3>innerHTML 활용</h3>
+	<hr>
+	<p id="firstP" style = "color : red" onclick = "callChange()">
+		여기를 <span style = "color : blue">클릭</span>하세요.
+	</p>
+</body>
+</html>
