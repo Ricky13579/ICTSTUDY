@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입폼 - validation check 중요</title>
+<style>
+	fieldset{
+		max-width: 420px;
+		margin: 15px 10px;
+	}
+
+	legend{
+		font-size: 18px;
+		font-weight: bold;
+		color: blue;
+	}
+
+	label{
+		font-size: 18px;
+		font-weight: bold;
+		width: 120px;
+	}
+
+	table, th, td{
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+
+	th, td{
+		padding: 10px;
+	}
+</style>
+<script type="text/javascript">
+	function inputChk(){
+		if(!document.signIn.user_id.value){
+			alert("아이디가 없습니다.");
+			document.signIn.user_id.focus();
+			return false;
+		}
+		
+		if(!document.signIn.user_password.value){
+			alert("비밀번호가 없습니다.");
+			document.signIn.user_password.focus();
+			return false;
+		}
+		
+		if(!document.signIn.user_rePassword.value){
+			alert("비밀번호 확인이 없습니다.");
+			document.signIn.user_rePassword.focus();
+			return false;
+		}
+		
+		if(!document.signIn.user_email.value){
+			alert("이메일이 없습니다.");
+			document.signIn.user_email.focus();
+			return false;
+		}
+		
+		if(document.signIn.user_password.value != document.signIn.user_rePassword.value){
+			alert("비밀번호가 다릅니다.")
+			document.signIn.user_rePassword.focus();
+			return false;
+		}
+		
+		document.signIn.submit();
+	}
+	
+	function onload(){
+		let userID = document.getElementById("userID");
+		userID.focus();
+	}
+</script>
+</head>
+<body onload="onload()">
+
+<!-- onsubmit : submit(전송)할 때 이벤트 발생함.
+	return inputChk() => action에서 서버로 입력값들을 전송시에 inputChk()로 호출한 함수내에서
+						 false값이 리턴되면 에러가 발생하므로 동작을 중지한다.
+						 정상이면 폼에서 입력한 값들을 서버로 전송, action에서 지정한 페이지로 결과들을 출력
+ -->
+	<form name="signIn" action="20_form_next.html" method="post">
+		
+		<fieldset>
+			<legend>회원가입</legend>
+			
+			<table>
+				<tr> 
+					<!-- input name == DTO의 멤버변수 == 테이블의 컬럼명 -->
+					<td align="right"><label for="userID">아이디 : </label></td>
+					<td><input type="text" id="userID" name="user_id" size="30"></td>
+				</tr>
+				<tr>
+					<td align="right"><label for="userPassword">비밀번호 : </label></td>
+					<td><input type="password" id="userPassword" name="user_password" size="30"></td>
+				</tr>
+				<tr>
+					<td align="right"><label for="userRePassword">비밀번호 (확인) : </label></td>
+					<td><input type="password" id="userRePassword" name="user_rePassword" size="30"></td>
+				</tr>
+				<tr>
+					<td align="right"><label for="userEmail">이메일 : </label></td>
+					<td><input type="email" id="userEmail" name="user_email" size="30"></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<br>
+						<div align="center">
+							<!-- type="submit"(전송) : 폼에서 입력한 값들을 서버로 전송,  -->
+							<input type="button" value="회원가입" onclick="inputChk()">
+							<input type="reset" value="가입취소">
+						</div>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+</body>
+</html>
