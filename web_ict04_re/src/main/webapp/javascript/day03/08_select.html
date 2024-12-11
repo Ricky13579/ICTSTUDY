@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function selectMood(){
+		if(document.frm.isgood.value){
+			alert("당신은 오늘 " + document.frm.isgood.value +"합니다.");
+		}
+	}
+</script>
+</head>
+<body>
+	<form action="#" method="post" name="frm">
+		<fieldset>
+			<legend>오늘 내 감정의 만족도</legend>
+			<select name="isgood" onchange="selectMood()">
+				<option value="">당신의 오늘의 기분을 만족도로 표현해보세요</option>
+				<option value="매우 만족">매우 만족</option>
+				<option value="만족">만족</option>
+				<option value="보통">보통</option>
+				<option value="불만족">불만족</option>
+				<option value="매우 불만족">매우 불만족</option>
+			</select>
+		</fieldset>
+	</form>
+</body>
+</html>
