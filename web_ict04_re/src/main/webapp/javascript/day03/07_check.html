@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function soccer(){
+		let likes = "";
+		for(let i = 0; i < document.soccerForm.position.length; i++){
+			if(document.soccerForm.position[i].checked){
+				likes += document.soccerForm.position[i].value + " ";
+			}
+		}
+		if(likes){
+			alert("선호하는 포지션 : " + likes);
+		}else{
+			alert("선호하는 포지션을 1개 이상 선택해주세요.");
+		}
+	}
+</script>
+</head>
+<body>
+	<form action="#" method="post" name="soccerForm">
+		<fieldset>
+			<legend>축구 포지션 선호도 조사(1개 이상)</legend>
+			<table>
+				<tr>
+					<td><input type="checkbox" id="attack" name="position" value="공격수"></td>
+					<td><label for="attack">공격수</label></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" id="midfield" name="position" value="미드필더"></td>
+					<td><label for="midfield">미드필더</label></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" id="defense" name="position" value="수비수"></td>
+					<td><label for="defense">수비수</label></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" id="goalkeeper" name="position" value="골키퍼"></td>
+					<td><label for="goalkeeper">골키퍼</label></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div align="center">
+							<input type="button" value="제출" onclick="soccer()">
+							<input type="reset" value="초기화">
+						</div>
+					</td>
+				</tr>
+				
+			</table>
+		</fieldset>
+	</form>
+</body>
+</html>
