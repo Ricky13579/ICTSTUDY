@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function change(){
+		let girls = document.getElementsByTagName("span");
+		for(let i = 0; i < girls.length; i++){
+			girls[i].style.color = "teal";
+			girls[i].style.fontSize = "20px";
+			girls[i].style.fontWeight="bold";
+		}
+	}
+</script>
+</head>
+<body>
+	<h3>걸그룹</h3>
+	<p>
+		<span>아이브</span>, <span>오마이걸</span>, 레드벨벳,
+		<span>여자친구</span>, 소녀시대, 트와이스
+	</p>
+	
+	<button value="누르지 마!!!" onclick="change()">누르세요!!!</button>
+</body>
+</html>
