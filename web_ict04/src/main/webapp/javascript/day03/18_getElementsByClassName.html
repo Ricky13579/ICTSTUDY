@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>getElementsByClassName</title>
+<script type="text/javascript">
+	function load(){
+		let inputClass = document.getElementsByClassName("inputClass");
+		for(let i = 0; i < inputClass.length; i++){
+			alert(inputClass[i].value);
+		}
+	}
+</script>
+</head>
+<body onload="load()">
+	<h3>로그인</h3>
+	아이디 : <input type="text" id="userID" class="inputClass" value="hong"><br>
+	비밀번호 : <input type="password" class="inputClass" value="1234"><br>
+	
+	<input type="button" class="inputClass" value="로그인">
+</body>
+</html>
