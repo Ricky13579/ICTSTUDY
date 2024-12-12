@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>직접선택자 - 그룹선택자</title>
+
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".title, h2:first-child").css("border","solid 1px black")
+		.css("background","lightgray")
+		.css("color","red");
+	});
+</script>
+</head>
+<body>
+	<h2>제이쿼리</h2>
+	<h3 class="title">선택자</h3>
+	<h4>선택자</h4>
+	<h4>직접선택자</h4>
+</body>
+</html>
