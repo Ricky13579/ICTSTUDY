@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>동적으로 변하는 리스트 만들기</title>
+<style>
+	fieldset{
+		max-width : 520px;
+	}
+</style>
+<script type="text/javascript">
+	function select_city(){
+	    let cities = document.myForm.city;
+	    let gus = document.myForm.gu;
+		let seoul = new Array("강남구", "강북구","관악구","구로구","노원구","동대문구","강동구","강서구","광진구","도봉구");
+	    let incheon = new Array("중구", "동구","미추홀구","연수구","남동구","부평구","계양구","서구");
+	    
+	    if(cities.value == "서울")
+	    {
+	    	gus.length = 0;
+	    	gus.options[0] = new Option("구를 선택하세요","");
+	    	for(let i = 0; i < seoul.length; i++)
+	    	{
+	    		gus.options[gus.length] = new Option(seoul[i], seoul[i]);
+	    	}
+	    }
+	    else if(cities.value == "인천")
+	    {
+	    	gus.length = 0;
+	    	gus.options[0] = new Option("구를 선택하세요","");
+	    	for(let i = 0; i < incheon.length; i++)
+	    	{
+	    		gus.options[gus.length] = new Option(incheon[i], incheon[i]);
+	    	}
+	    }
+	    else
+	    {
+	    	alert("도시명을 입력하세요");
+	    }
+	}
+	
+	function select_gu(){
+		if(document.myForm.city.value != "" && document.myForm.gu.value != "")
+		{
+			alert(document.myForm.city.value + " " + document.myForm.gu.value);
+		}
+		else if(!document.myForm.gu.value){
+			alert("구를 입력하세요!!");
+			document.myForm.gu.value = "";
+			document.myForm.gu.focus();
+		}
+	}
+</script>
+</head>
+<body>
+	<h3>동적으로 변하는 리스트 만들기</h3>
+	<form name="myForm">
+		<fieldset>
+			<legend>select 객체 예제</legend>
+			<select name="city" onchange="select_city()">
+				<option value="">도시명을 선택하세요.</option>
+				<option value="서울">서울</option>
+				<option value="인천">인천</option>
+			</select>
+			
+			<select name="gu" onchange="select_gu()">
+				<option value="">구를 선택하세요.</option>
+			</select>
+		</fieldset>
+	</form>
+</body>
+</html>
