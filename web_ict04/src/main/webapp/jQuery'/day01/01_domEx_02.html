@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>직접선택자 - 아이디 선택자</title>
+
+<!-- 2. 네트워크 전송방식(CDN 방식)으로 연동하기 => 문제점 : 인터넷이 안되면 작동 안됨 -->
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	//직접선택자 - 아이디 선택자 => 아이디와 일치한 곳에 속성을 지정한다.
+	// $("css 선택자").css("스타일속성명", "값");
+	
+	$(function(){
+		// 모든 요소(*)에 스타일 적용
+		// 1px solid violet
+		$("*").css("border", "1px solid violet");
+	});
+</script>
+</head>
+<body>
+	<h2>제이쿼리</h2>
+	<h2>선택자</h2>
+	<h2>직접선택자</h2>
+</body>
+</html>
