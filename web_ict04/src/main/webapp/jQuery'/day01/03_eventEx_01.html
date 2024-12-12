@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>event - click()</title>
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+/*
+	이벤트 : 사용자가 취하는 모든 동작을 말한다.
+	이벤트 핸들러 : 이벤트가 발생했을 때 실행되는 코드를 말한다.
+	$("이벤트 대상").이벤트 등록 메서드(function() {
+	   스크립트 코드;
+	});
+*/
+	$(function(){
+		$("#btn1").click(function(){
+			$('#box').css("color", "red");
+		});
+		$("#btn2").click(function(){
+			$('#box').css("color", "green");
+		});
+		$("#btn3").click(function(){
+			$("#box").css("color", "blue");
+		});
+		$("#btn4").click(function(){
+			$("#box").css("background","skyblue");
+		});
+		$("#btn5").click(function(){
+			$("#box").css("background", "purple");
+		});
+		$("#btn6").click(function(){
+			$("#box").css("background", "orange");
+		});
+		$("#btn7").click(function(){
+			$("#box").css("width", "50%");
+		});
+		$("#btn8").click(function(){
+			$("#box").addClass("box2");
+			$("#box").removeClass("box1");
+		});
+		$("#btn9").click(function(){
+			$("#box").addClass("box1");
+			$("#box").removeClass("box2");
+		});
+	});
+</script>
+<style>
+   .box1 {
+      margin: 10px auto;
+      border: 1px solid #ccc;   /* 회색 */
+      background-color: linen;
+      color: #c67100;   /* 브라운 */
+      padding: 30px;   /* 안쪽 여백 */
+      text-align: center;   /* 글자 : 가운데정렬 */
+   }
+   
+   .box2 {
+      margin: 20px auto;
+      border: 2px solid #ccc;   /* 회색 */
+      background-color: mistyrose;
+      color: navy;   /* navy */
+      padding: 25px;   /* 안쪽 여백 */
+      text-align: left;   /* 글자 : 왼쪽정렬 */
+   }
+</style>
+</head>
+<body>
+	<h3> click 이벤트 </h3>
+   <div id="box"  class="box1">
+      <h3> 텍스트 영역임 ... </h3>
+   </div>
+   
+   <input type="button"  id="btn1"  value="(폰트)  red">
+   <input type="button"  id="btn2"  value="(폰트)  green">
+   <input type="button"  id="btn3"  value="(폰트)  blue">
+   <input type="button"  id="btn4"  value="(배경색)  skyblue">
+   <input type="button"  id="btn5"  value="(배경색)  purple">
+   <input type="button"  id="btn6"  value="(배경색)  orange">
+   <input type="button"  id="btn7"  value="width=50%">
+   <input type="button"  id="btn8"  value="box2 클래스 적용하기">
+   <input type="button"  id="btn9"  value="box1 클래스 적용하기">
+</body>
+</html>
