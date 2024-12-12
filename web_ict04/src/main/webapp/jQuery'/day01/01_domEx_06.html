@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>인접선택자 - 범위 제한 전체 형/동생 요소 선택자</title>
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	// 인접선택자 - 범위 제한 전체 형/동생 요소 선택자
+	// $("요소선택").prevUntil(범위 제한 요소 선택);
+	// $("요소선택").nextUntil(범위 제한 요소 선택);
+	$(function(){
+		let style_1 = {"border":"3px solid brown",
+						"background":"linen",
+						"color":"blue"};
+		
+		let style_2 = {"border":"1px solid black",
+						"background":"skyblue",
+						"color":"white"};
+		
+		$(function(){
+			$(".text3").prevUntil(".title").css(style_1);
+		});
+		
+		$(function(){
+			$(".text3").nextUntil(".text6").css(style_2);
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<h3 class="title">인접선택자</h3>
+		<p>내용1</p>	<!-- style_1 적용 -->
+		<p>내용2</p>	<!-- style_1 적용 -->
+		<p class="text3">내용3</p>
+		<p>내용4</p>	<!-- style_2 적용 -->
+		<p>내용5</p>	<!-- style_2 적용 -->
+		<p class="text6">내용6</p>
+	</div>
+</body>
+</html>
