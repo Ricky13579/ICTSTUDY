@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>인접선택자 - 형(이전) / 동생(다음) 선택자</title>
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	// 인접선택자 - 형(이전) / 동생(다음) 선택자
+	// 형(이전) 선택자 => 선택한 요소를 기준으로 바로 이전 형제 요소만 선택. $("요소선택").prev();
+	// 동생(다음) 선택자 => 선택한 요소를 기준으로 바로 다음 형제 요소만 선택. $("요소선택").next();
+	$(function(){
+		let style_1 = {"border":"3px solid brown",
+						"background":"linen",
+						"color":"blue"};
+		
+		let style_2 = {"border":"1px solid black",
+						"background":"skyblue",
+						"color":"white"};
+		// 1) <text>를 기준으로 이전 요소만 선택
+			$(".text").prev().css(style_1);
+		
+		// 2) <text>를 기준으로 이후 요소만 선택
+			$(".text").next().css(style_2);
+			$(".text").next().next().css(style_2);
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<h3>인접선택자</h3>
+		<p>내용1</p>	<!-- style_1 적용 -->
+		<p class="text">내용2</p>	<!-- style_1 적용 -->
+		<p>내용3</p>	<!-- style_2 적용 -->
+		<p>내용4</p>	<!-- style_2 적용 -->
+	</div>
+</body>
+</html>
