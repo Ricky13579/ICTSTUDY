@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	fieldset{
+		max-width : 500px;
+	}
+</style>
+<script type="text/javascript">
+	function submitChk(){
+		// 이름 : 입력시작부터 입력끝까지(한글 2~5글자)까지 일치하는 패턴으로 정규표현 객체를 생성
+		// 주의 : 정규식에 공백이 있으면 안됨
+		let reg_name = /^[가-힣]{2,5}$/;
+		
+		 /*
+	       ^ : 문자열의 시작을 나타냅니다.
+	       (?=.*\d) : 문자열에 숫자가 적어도 1개 이상 포함되어야 함을 나타냅니다.
+	       (?=.*[a-zA-Z]) : 문자열에 영문자가 적어도 1개 이상 포함되어야 함을 나타냅니다.
+	       (?=.*[\W_]) : 문자열에 특수문자가 적어도 1개 이상 포함되어야 함을 나타냅니다.
+	       [a-zA-Z0-9\W_]{8,15} : 영문, 숫자, 특수문자 조합으로 이루어진 8~15자의 문자열을 나타냅니다.
+	       $ : 문자열의 끝을 나타냅니다.
+	       [!@#$%^*+=-] 이 부분이 특수문자까지 허용됩니다.
+	      */
+		
+		// 비밀번호 : [ 숫자와 문자 포함 형태의 8~15자리] 이내의 암호 정규식
+		let reg_password = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,15}$/;
+		
+	    // 핸드폰 : 첫번호는 010,070,080중 하나로 시작하고, 다음 번호는 3~4개까지 오고,
+       //             마지막 번호는 숫자 4개가 일치하는 패턴으로 정규표현 객체를 생성
+       // 테스트 : -없이 입력
+       let reg_mobile = /^(010|070|080)\d{3,4}\d{4}$/;	// d: digit(자리수)
+        
+	   let reg_email = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+       
+       if(!document.signIn.userName.value){
+    	   alert("이름이 없습니다.");
+    	   document.signIn.userName.focus();
+    	   return false;
+       }
+       else if(reg_name.test(document.signIn.userName.value))
+       {
+    	   alert("이름 : " + document.signIn.userName.value);
+       }
+       else
+       {
+    	   alert("이름의 형식이 맞지 않습니다. 다시 입력하세요");
+    	   document.signIn.userName.value = "";
+    	   document.signIn.userName.focus();
+    	   return false;
+       }
+       
+       if(!document.signIn.userPassword.value){
+    	   alert("비밀번호가 없습니다.");
+    	   document.signIn.userPassword.focus();
+    	   return false;
+       }
+       else if(reg_password.test(document.signIn.userPassword.value))
+       {
+    	   alert("비밀번호 : " + document.signIn.userPassword.value);
+       }
+       else
+       {
+    	   alert("비밀번호의 형식이 맞지 않습니다. 다시 입력하세요");
+    	   document.signIn.userPassword.value = "";
+    	   document.signIn.userPassword.focus();
+    	   return false;
+       }
+       
+       if(!document.signIn.userMobile.value){
+    	   alert("핸드폰 번호가 없습니다.");
+    	   document.signIn.userMobile.focus();
+    	   return false;
+       }
+       else if(reg_mobile.test(document.signIn.userMobile.value))
+       {
+    	   alert("핸드폰 번호 : " + document.signIn.userMobile.value);
+       }
+       else
+       {
+    	   alert("핸드폰 번호의 형식이 맞지 않습니다. 다시 입력하세요");
+    	   document.signIn.userMobile.value = "";
+    	   document.signIn.userMobile.focus();
+    	   return false;
+       }
+       
+       if(!document.signIn.userEmail1.value){
+    	   alert("이메일이 없습니다.");
+    	   document.signIn.userEmail1.focus();
+    	   return false;
+       }
+       else if(!document.signIn.userEmail2.value){
+    	   alert("이메일이 없습니다.");
+    	   document.signIn.userEmail2.focus();
+    	   return false;
+       }
+       else if(reg_email.test(document.signIn.userEmail1.value + "@" + document.signIn.userEmail2.value))
+       {
+    	   alert("이메일 : " + document.signIn.userEmail1.value + "@" + document.signIn.userEmail2.value);
+       }
+       else
+       {
+    	   alert("이메일의 형식이 맞지 않습니다. 다시 입력하세요");
+    	   document.signIn.userEmail1.value = "";
+    	   document.signIn.userEmail2.value = "";
+    	   document.signIn.userEmail1.focus();
+    	   return false;
+       }
+       document.signIn.submit();  //Enter로 이동은 못하나 탭키로 이동가능
+	}
+	
+	function selectEmailChk(){
+		if(document.signIn.userEmail3.value != "0")
+		{
+			document.signIn.userEmail2.value = document.signIn.userEmail3.value;
+			return false;
+		}
+		else
+		{
+			document.signIn.userEmail2.value = "";
+			document.signIn.userEmail2.focus();
+			return false;
+		}
+		
+		document.signIn.submit();
+	}
+</script>
+</head>
+<body>
+	<form name="signIn" action="24_form_next.html" method="post">
+		
+		<fieldset>
+			<legend>회원가입</legend>
+			
+			<table>
+				<tr> 
+					<!-- input name == DTO의 멤버변수 == 테이블의 컬럼명 -->
+					<td align="right"><label for="nameChk">이름 : </label></td>
+					<td><input type="text" id="nameChk" name="userName" size="30"></td>
+				</tr>
+				<tr>
+					<td align="right"><label for="pwdChk">비밀번호 : </label></td>
+					<td><input type="password" id="pwdChk" name="userPassword" size="30"></td>
+				</tr>
+				<tr>
+					<td align="right"><label for="mobileChk">핸드폰 : </label></td>
+					<td><input type="password" id="mobileChk" name="userMobile" size="30"></td>
+				</tr>
+				<tr>
+					<td align="right"><label for="emailChk">이메일 : </label></td>
+					<td>
+						<input type="text" id="emailChk" name="userEmail1" size="20" style="width : 100px">
+						@
+						<input type="text" id="emailChk" name="userEmail2" size="30" style="width : 100px">
+						
+						<select name="userEmail3" style="width : 100px" onchange="selectEmailChk()">
+							<option value="0">직접입력</option>
+							<option value="naver.com">네이버</option>
+							<option value="gmail.com">구글</option>
+							<option value="daum.net">다음</option>
+							<option value="nate.com">네이트</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<br>
+						<div align="center">
+							<!-- type="submit"(전송) : 폼에서 입력한 값들을 서버로 전송,  -->
+							<input type="button" value="회원가입" onclick="submitChk()">
+							<input type="reset" value="가입취소">
+						</div>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+</body>
+</html>
