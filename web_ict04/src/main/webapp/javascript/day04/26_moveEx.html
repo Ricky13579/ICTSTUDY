@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>동적으로 변하는 리스트 만들기</title>
+<style>
+	fieldset{
+		max-width : 520px;
+	}
+</style>
+<script type="text/javascript">
+	function moveR(frm){
+		// gus.options[gus.length] = new Option("text", value);
+		let menu = frm.menu;
+		let myMenu = frm.myMenu;
+		if(menu.value){
+			myMenu.options[myMenu.length] = new Option(menu[menu.selectedIndex].text, menu[menu.selectedIndex].value);
+			menu.options[menu.selectedIndex] = null;
+		}
+		else
+		{
+			alert("추가할 메뉴를 선택하세요!!!");
+		}
+	}
+	
+	function moveL(frm){
+		let menu = frm.menu;
+		let myMenu = frm.myMenu;
+		if(myMenu.value){
+			menu.options[menu.length] = new Option(myMenu[myMenu.selectedIndex].text, myMenu[myMenu.selectedIndex].value);
+			myMenu.options[myMenu.selectedIndex] = null;
+		}
+		else
+		{
+			alert("삭제할 메뉴를 선택하세요!!!");
+		}
+	}
+</script>
+</head>
+<body>
+	<form name="myForm" action="#"  method="post">
+      <fieldset>
+         <legend>List 박스에서 항목 이동 예제</legend>
+         <p> 나만의 예제를 고르세요. 
+            <table>
+               <tr>
+                  <td>메뉴</td>
+                  <td>             </td>
+                  <td>나만의 메뉴</td>
+               </tr>
+               
+               <tr>
+                  <td>
+                     <select name="menu"  size="25">
+                        <option value="파일">파일</option>
+                        <option value="편집">편집</option>
+                        <option value="저장">저장</option>
+                        <option value="복사">복사</option>
+                        <option value="붙여넣기">붙여넣기</option>
+                        <option value="선택">선택</option>
+                        <option value="찾기">찾기</option>
+                        <option value="옵션">옵션</option>
+                        <option value="도움말">도움말</option>
+                        <option value="삭제">삭제</option>
+                        <option value="수정">수정</option>
+                     </select>
+                  </td>
+                  
+                  <!-- 이동시 이동메뉴는 맨아래에 추가 -->
+                  <td align="center"  valign="middle">
+                     <!--  this.form : myForm -->
+                     <input type="button" value = "Add  >>  "   onclick="moveR(this.form);"><br> 
+                     <input type="button" value = "<< Remove   "   onclick="moveL(this.form);"><br>
+                  </td>
+                  
+                  <td>
+                     <select name="myMenu"  size="25">
+                     
+                     </select>
+                  </td>
+               </tr>
+            </table>
+         </p>
+      </fieldset>
+   
+   </form>
+</body>
+</html>
