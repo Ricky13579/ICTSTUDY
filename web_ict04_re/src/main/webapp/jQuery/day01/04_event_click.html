@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#btn1").click(function(){
+			$("#box").css("color", "red");
+		});
+		$("#btn2").click(function(){
+			$("#box").css("color", "yellow");
+		});
+		$("#btn3").click(function(){
+			$("#box").css("color", "black");
+		});
+		$("#btn4").click(function(){
+			$("#box").css("background", "red");
+		});
+		$("#btn5").click(function(){
+			$("#box").css("background", "yellow");
+		});
+		$("#btn6").click(function(){
+			$("#box").css("background", "black");
+		});
+		$("#btn7").click(function(){
+			$("#box").addClass("box1");
+			$("#box").removeClass("box2");
+		});
+		$("#btn8").click(function(){
+			$("#box").addClass("box2");
+			$("#box").removeClass("box1");
+		});
+	});
+</script>
+<style>
+	.box1 {
+      margin: 10px auto;
+      border: 1px solid #ccc;   /* 회색 */
+      background-color: linen;
+      color: #c67100;   /* 브라운 */
+      padding: 30px;   /* 안쪽 여백 */
+      text-align: center;   /* 글자 : 가운데정렬 */
+   }
+   
+   .box2 {
+      margin: 20px auto;
+      border: 2px solid #ccc;   /* 회색 */
+      background-color: mistyrose;
+      color: navy;   /* navy */
+      padding: 25px;   /* 안쪽 여백 */
+      text-align: left;   /* 글자 : 왼쪽정렬 */
+   }
+</style>
+</head>
+<body>
+	<div id="box" class="box1">
+		<h3>안녕! 내 이름은 신짱구!!! 5살!!!</h3>
+	</div>
+	
+	<input type="button" id="btn1" value="글씨 빨강색">
+	<input type="button" id="btn2" value="글씨 노랑색">
+	<input type="button" id="btn3" value="글씨 검정색">
+	<input type="button" id="btn4" value="배경 빨강색">
+	<input type="button" id="btn5" value="배경 노랑색">
+	<input type="button" id="btn6" value="배경 검정색">
+	<input type="button" id="btn7" value="box1 적용">
+	<input type="button" id="btn8" value="box2 적용">
+</body>
+</html>
