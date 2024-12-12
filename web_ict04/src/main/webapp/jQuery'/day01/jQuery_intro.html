@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 소개</title>
+</head>
+<body>
+<h3> DOM 이란 ?</h3>
+   DOM(Document Object Model : 문서 객체 모델)은 HTML 문서를 읽고 조작하는 객체의 집합이다.
+   즉 HTML 문서의 구조를 말하며, 자바스크립트를 사용하여 문서객체를 선택하고, 속성 또는 스타일을 적용한다.
+   
+   <h3> jQuery란? </h3>
+   DOM(Document Object Model : 문서 객체 모델)과 자바스크립트 사이의 상호작용을 간단하게 해주는 오픈소스
+   자바스크립트 라이브러리(자바스크립트로 만들어진 다양한 함수들의 집합)이다.
+   '자바스크립트(j)에서 DOM 요소를 질의(Query)한다.' 이 문장에서 j와 Query를 합친 단어이다. 
+   jQuery 함수는 $(document).ready(); 
+                   또는 jQuery(); 
+                   또는 $();를 말하며, DOM에서 엘리먼트(요소, 태그)를 선택하기 위해서 사용한다.
+   
+    $(document).ready() => html 문서가 웹브라우저에 로드되어 준비된 상태가 되었을 때, 적당한 처리를 하기 위한 이벤트 핸들러이다.
+                        => "window.onload"를 대신하여 jQuery가 제공하는 메서드로서,
+                        DOM이 로드되고, 이미지가 로드되기 전에, 호출되는 이벤트 핸들러로서, 준비핸들러이다.  
+                        
+     
+     
+/*
+   - 배열에 저장된 요소의 개수만큼 메서드를 반복 실행한다.
+   - 메서드를 실행할 때마다 매개변수1, 매개변수2에는 인덱스의 값과 배열데이터가 오름차순으로 대입된다.
+   $("요소선택").each(function(매개변수1, 매개변수2) { });
+   $.each($("요소선택"), function(매개변수1, 매개변수2) { });
+   
+   - 배열에 저장된 요소의 개수만큼 메서드를 반복 실행한다.
+   - 메서드를 실행할 때마다 $(this)에는 배열에 저장된 요소가 오름차순으로 대입된다.
+   $("요소선택").each(function() {$(this)});
+   $.each($("요소선택"), function() {$(this)});
+   
+   //---------------  JSON : 면접 ------------------//
+   JSON : 자바스크립트의 객체표기법을 JSON(Javascript Object Notation)
+   JSON은 데이터를 전달할 때 사용하는 표준 형식으로, JSON 표기의 기본형은 다음과 같다.
+   
+   기본형 : {"속성1":값1, "속성2":값2,  "속성3":값3,}  
+   JSON은 속성(Key)과 값(Value)이 하나의 쌍을 이루고 있다.
+*/
+     
+                        
+<!-- 
+   1. 다운로드 방식으로 연동하기
+     1) https://jquery.com/ 
+     2) 첫페이지 Download jQuery 버튼 클릭(v3.7.1)
+     3) 다음 페이지 주황색 버튼 Download jQuery 3.7.1 클릭  
+     4) 우클릭 후 다른 이름으로 링크 저장(위치 => D:\Dev01\workspace\web_01\WebContent\jQuery\js)
+     5) 이클립스 jQuery 폴더에서 우클릭 > 새로고침(F5) > js\jquery-3.7.0.min.js
+     6) 연결 : src="./js/jquery-3.7.0.min.js"
+     <script type="text/javascript" src="./js/jquery-3.7.0.min.js"></script>
+-->
+
+<!--    
+    2. 네트워크 전송방식(CDN : Content Delivery Network 방식)으로 연동하기 => 문제점 : 인터넷이 안되면 작동안됨
+    1) https://jquery.com/ 
+    2) 첫페이지 Download jQuery 버튼 클릭(v3.7.1)
+    3) 다음 페이지 주황색 버튼 Download jQuery 3.7.1 클릭
+    4) url 복사해서 src에 붙여넣는다.  
+    5) <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+ -->
+</body>
+</html>
