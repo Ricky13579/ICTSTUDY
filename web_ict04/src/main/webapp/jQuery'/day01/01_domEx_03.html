@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>직접선택자 - 클래스 선택자</title>
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// 직접선택자 - class 선택자 => 클래스명과 일치한 곳에 속성을 지정한다.
+		// 체이닝 기법 - 선택한 요소에 속성을 연속해서 사용, 마치 체인(사슬)이 엮인 모양과 같다.
+		// $("css 선택자").css("스타일속성명1", "값1").css("스타일속성명2", "값2").css("스타일속성명n", "값n");
+		$(".title").css("border","solid 1px black")
+					.css("background","lightgray")
+					.css("color","red");
+	});
+</script>
+</head>
+<body>
+	<h2 class="title">제이쿼리</h2>
+	<h2>선택자</h2>
+	<h2>직접선택자</h2>
+</body>
+</html>
