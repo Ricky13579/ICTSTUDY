@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script type="text/javascript">
+	function select_grade(){
+		let grades = document.frm.grade;
+		let scores = document.frm.score;
+		
+		if(grades.value == "A"){
+			scores.length = 0;
+			scores.options[0] = new Option("점수를 선택해주세요","");
+			for(let i = 100; i >= 90; i--){
+				scores.options[scores.length] = new Option(i+"점", i);
+			}
+		}
+		else if(grades.value == "B"){
+			scores.length = 0;
+			scores.options[0] = new Option("점수를 선택해주세요","");
+			for(let i = 89; i >= 80; i--){
+				scores.options[scores.length] = new Option(i+"점", i);
+			}
+		}
+		else if(grades.value == "C"){
+			scores.length = 0;
+			scores.options[0] = new Option("점수를 선택해주세요","");
+			for(let i = 79; i >= 70; i--){
+				scores.options[scores.length] = new Option(i+"점", i);
+			}
+		}
+		else if(grades.value == "D"){
+			scores.length = 0;
+			scores.options[0] = new Option("점수를 선택해주세요","");
+			for(let i = 69; i >= 60; i--){
+				scores.options[scores.length] = new Option(i+"점", i);
+			}
+		}
+		else if(grades.value == "F"){
+			scores.length = 0;
+			scores.options[0] = new Option("점수를 선택해주세요","");
+			for(let i = 59; i>=0; i--){
+				scores.options[scores.length] = new Option(i+"점", i);
+			}
+		}
+	}
+	
+	function select_score(){
+		let grades = document.frm.grade;
+		let scores = document.frm.score;
+		if(!grades.value){
+			alert("학점을 선택하세요");
+			grades.value = "";
+			grades.focus();
+		}else if(!scores.value){
+			alert("점수를 선택하세요");
+			scores.value = "";
+			scores.focus();
+		}else{
+			alert("이번 학기 당신의 성적은 "+grades.value+"학점, "+scores.value+"점입니다.");
+		}
+	}
+</script>
+</head>
+<body>
+	<form action="#" name="frm">
+		<fieldset>
+			<legend>학점 조회 시스템</legend>
+			<select name="grade" onchange="select_grade()">
+				<option value="">학점을 선택해주세요</option>
+				<option value="A">A</option>
+				<option value="B">B</option>
+				<option value="C">C</option>
+				<option value="D">D</option>
+				<option value="E">E</option>
+				<option value="F">F</option>
+			</select>
+			<select name="score" onchange="select_score()">
+				<option value="">점수를 선택해주세요</option>
+			</select>
+		</fieldset>
+	</form>
+</body>
+</html>
