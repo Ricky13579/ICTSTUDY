@@ -55,22 +55,20 @@ public class _02_MemberService {
 //							}
 							
 							// 방법 1.
-							for(_02_MemberDTO mdto : list) {
-								System.out.println(mdto);
-							}
-							
-							// 방법 2.
-//							Iterator iterator = list.iterator();
-//							while(iterator.hasNext()) {
-//								System.out.println(iterator.next());
+//							for(_02_MemberDTO mdto : list) {
+//								System.out.println(mdto);
 //							}
 							
+							// 방법 2.
+							Iterator<_02_MemberDTO> iterator = list.iterator();
+							while(iterator.hasNext()) {
+								System.out.println(iterator.next());
+							}
 							list.clear();
 							break;
 						case 6:
 							System.out.println("시스템을 종료합니다.");
-							System.exit(0);
-							break;
+							return;
 						default:
 							System.out.println("잘못 입력하셨습니다. 다시 해주십시오");
 							break;
