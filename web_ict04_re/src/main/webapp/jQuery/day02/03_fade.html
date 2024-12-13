@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fadeIn, fadeOut, fadeToggle</title>
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#buttons > input:eq(0)").click(function(){
+			$("img").fadeOut(1000);
+		});
+		$("#buttons > input:eq(1)").click(function(){
+			$("img").fadeIn(1000);
+		});
+		$("#buttons > input:eq(2)").click(function(){
+			$("img").fadeToggle(1000);
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="buttons">
+		<input type="button" value="fadeOut">
+		<input type="button" value="fadeIn">
+		<input type="button" value="fadeToggle">
+	</div>
+	<br>
+	<div>
+		<img src="../../images/animals/anaconda.jpg">
+	</div>
+</body>
+</html>
