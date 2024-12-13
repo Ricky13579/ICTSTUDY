@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 연습</title>
+<style>
+	fieldset{
+		max-width : 500px;
+	}
+	#result {
+      margin: 10px auto;
+      border: 1px solid #ccc;   /* 회색 */
+      background-color: linen;
+      color: #c67100;   /* 브라운 */
+      padding: 30px;   /* 안쪽 여백 */
+      text-align: center;   /* 글자 : 가운데정렬 */
+   }
+</style>
+
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#join").submit(function(){
+			if($("#result").length == 0){
+				$("#join").append("<div id='result'></div>");
+			}
+			
+			if(!$("#user_id").val()){
+				$("#result").html("아이디를 입력해주세요!!");
+				$("#user_id").focus();
+				return false;
+			}
+			
+			if(!$("#user_pwd").val()){
+				$("#result").html("비밀번호를 입력해주세요!!");
+				$("#user_pwd").focus();
+				return false;
+			}
+			
+			if(!$("#user_jumin").val()){
+				$("#result").html("주민번호를 입력해주세요!!");
+				$("#user_jumin").focus();
+				return false;
+			}
+			
+			if(!$("input:radio[name='userGender']").is(":checked")){
+				$("#result").html("성별을 선택해주세요!!");
+				$("input:radio[name='userGender']").eq(0).attr("checked", true);
+				return false;
+			}
+			
+			if(!$("input:checkbox[name='userHobby']").is(":checked")){
+				$("#result").html("취미를 선택해주세요!!");
+				$("#user_hobby").eq(0).attr("checked", true);
+				return false;
+			}
+			
+			if(!$("#user_email").val()){
+				$("#result").html("이메일을 입력해주세요!!");
+				$("#user_email").focus();
+				return false;
+			}
+			
+			if(!$("#user_job").val()){
+				$("#result").html("직업을 입력해주세요!!");
+				$("#user_job").focus();
+				return false;
+			}
+			
+			let user_id = $("#user_id").val();
+			let user_pwd = $("#user_pwd").val();
+			let user_jumin = $("#user_jumin").val();
+			let user_gender = $("input:radio[name='userGender']:checked").val();
+			let hobby = $("input:checkbox[name='userHobby']:checked");
+			let user_hobby = "";
+			let num = 1;
+			hobby.each(function(){
+				user_hobby += num + "번째 취미 : " + $(this).val() + "<br>";
+				num++;
+			});
+			let user_email = $("#user_email").val();
+			let user_job = $("#user_job").val();
+			
+			$("#result").html(
+					  "아이디 : " + user_id + "<br>"
+					+ "비밀번호 : " + user_pwd + "<br>"
+					+ "주민번호 : " + user_jumin + "<br>"
+					+ "성별 : " + user_gender + "<br>"
+							  + user_hobby
+					+ "이메일 : " + user_email + "<br>"
+					+ "직업 : " + user_job
+			);
+			
+			return false;
+		});
+	});
+</script>
+</head>
+<body>
+	<form name="frm" id="join">
+		<fieldset>
+			<legend>회원가입 연습</legend>
+			<table border=1>
+				<tr>
+					<td align="right"><label for="user_id">아이디</label></td>
+					<td>
+						<input type="text" name="userID" id="user_id" size="30">
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><label for="user_pwd">비밀번호</label></td>
+					<td>
+						<input type="password" name="userPwd" id="user_pwd" size="30">
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><label for="user_jumin">주민번호</label></td>
+					<td>
+						<input type="text" name="userJumin" id="user_jumin" size="13">
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><label for="user_gender">성별</label></td>
+					<td>
+						<input type="radio" name="userGender" id="user_gender" value="남성">남성
+						<input type="radio" name="userGender" id="user_gender" value="여성">여성
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><label for="user_hobby">취미</label></td>
+					<td>
+						<input type="checkbox" name="userHobby" id="user_hobby" value="축구 경기 보기">축구 경기 보기
+						<input type="checkbox" name="userHobby" id="user_hobby" value="유튜브 보기">유튜브 보기
+						<input type="checkbox" name="userHobby" id="user_hobby" value="낮잠">낮잠
+						<input type="checkbox" name="userHobby" id="user_hobby" value="코딩테스트">코딩테스트
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><label for="user_email">이메일</label></td>
+					<td>
+						<input type="email" name="userEmail" id="user_email" size="50">
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><label for="user_job">직업</label></td>
+					<td>
+						<select id="user_job" name="userJob">
+							<option value="">직업을 선택하세요</option>
+							<option value="프로그래머">프로그래머</option>
+							<option value="유튜버">유튜버</option>
+							<option value="학생">학생</option>
+							<option value="건물주">건물주</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div align="center">
+							<input type="submit" value="회원가입">
+							<input type="reset" value="가입취소">
+						</div>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+</body>
+</html>
