@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#result{
+		margin: 10px auto;
+		border: 1px solid #ccc;
+		background-color : linen;
+		color: #c67100;
+		padding: 30px;
+		text-align: center;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+/*
+	이벤트 : 사용자가 취하는 모든 동작을 말한다.
+	이벤트 핸들러 : 이벤트가 발생했을 때 실행되는 코드를 말한다.
+	$("이벤트 대상").이벤트 등록 메서드(function() {
+	   스크립트 코드;
+	});
+*/
+	$(function(){
+		// focus : 포커스 생성
+		// blur : 포커스 사라짐
+		$("#divInput > input[type='text']").focus(function(){
+			$("#result").html("아이디 포커스 생성");
+		});
+		
+		$("#divInput > input[type='text']").blur(function(){
+			$("#result").html("아이디 포커스 사라짐");
+		});
+		
+		$("#divInput > input[type='password']").focus(function(){
+			$("#result").html("비밀번호 포커스 생성");
+		});
+		
+		$("#divInput > input[type='password']").blur(function(){
+			$("#result").html("비밀번호 포커스 사라짐");
+		});
+	});
+</script>
+</head>
+<body>
+	<h3>event - focus() / blur()</h3>
+	<div id="divInput">
+		아이디 : <input type="text" size="20" placeholder="아이디 입력"><br>
+		비밀번호 : <input type="password" size="20" placeholder="비밀번호 입력">
+	</div>
+	
+	<h3>결과</h3>
+	<div id="result">결과 출력 위치</div>
+</body>
+</html>
