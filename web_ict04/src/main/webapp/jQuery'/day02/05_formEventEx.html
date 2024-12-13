@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>event - 회원가입 form 이벤트 => 중요</title>
+<style>
+   #result {
+      margin: 10px auto;
+      border: 1px solid #ccc;   /* 회색 */
+      background-color: linen;
+      color: #c67100;   /* 브라운 */
+      padding: 30px;   /* 안쪽 여백 */
+      text-align: center;   /* 글자 : 가운데정렬 */
+   }
+</style>
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#join").submit(function(){
+			if($("#result").length == 0){
+				$("#join").append("<div id='result'> 결과 출력 위치 </div>");
+			}
+			
+			// 1. validation check
+			// id 입력 확인
+			if(!$("#user_id").val()){
+				$("#result").html("아이디 입력!");
+				$("#user_id").focus();
+				return false;
+			}
+			
+			if(!$("#user_pwd").val()){
+				$("#result").html("비밀번호 입력!");
+				$("#user_pwd").focus();
+				return false;
+			}
+			
+			if(!$("#user_juminNo").val()){
+				$("#result").html("주민번호 입력!");
+				$("#user_juminNo").focus();
+				return false;
+			}
+			
+			if(!$("input:radio[name='userGender']").is(":checked")){
+				$("#result").html("성별 선택!");
+				$("input:radio[name='userGender']").eq(0).attr("checked", true);
+				return false;
+			}
+			
+			if(!$("#user_email").val()){
+				$("#result").html("이메일 입력!");
+				$("#user_email").focus();
+				return false;
+			}
+			
+			if(!$("#user_blog").val()){
+				$("#result").html("url 입력!");
+				$("user_blog").focus();
+				return false;
+			}
+			
+			if(!$("input:checkbox[name='userHobby']").is(":checked")){
+				$("#result").html("취미 선택!");
+				$("input:checkbox[name='userHobby']").eq(0).attr("checked", true);
+				return false;
+			}
+			
+			// 방법 1.
+			/* if(!$("#user_job").val()){
+				$("#result").html("직업 선택!");
+				$("#user_job").focus();
+				return false;
+			} */
+			
+			// 방법 2.
+			if(!$("select[name='userJob']").val()){
+				$("#result").html("직업 선택!");
+				$("select[name='userJob']").focus();
+				return false;
+			}
+			
+			// 2. 정상적으로 입력된 경우 변수에 담는다.
+			let user_id = $("#user_id").val();
+			let user_pwd = $("#user_pwd").val();
+			let user_juminNo = $("#user_juminNo").val();
+			let user_gender = $("input:radio[name='userGender']:checked").val();
+			let user_email = $("#user_email").val();
+			let user_blog = $("#user_blog").val();
+			
+			// 취미----------------------------------
+			let checked_hobby = $("input:checkbox[name='userHobby']:checked");
+			
+			// each() : checked_hobby의 개체수만큼 이벤트 핸들러가 반복되어 실행된다.
+			let user_hobby = ""; // 취미의 추출된 값을 누적하여 저장할 문자열 변수
+			let num = 1;
+			checked_hobby.each(function(){
+				user_hobby += num+"번 취미 : " + $(this).val() + "<br>";
+				num++;
+			});
+			// 취미----------------------------------
+			
+			let user_job = $("#user_job").val();
+			
+			// 3. result에 결과를 출력한다.
+			$("#result").html("아이디 : " + user_id + "<br>" +
+							  "비밀번호 : " + user_pwd + "<br>" +
+							  "주민번호 : " + user_juminNo + "<br>" +
+							  "성별 : " + user_gender + "<br>" +
+							  "이메일 : " + user_email + "<br>" +
+							  "블로그 : " + user_blog + "<br>" +
+							  			user_hobby +
+							  "직업 : " + user_job + "<br>"
+			);
+			
+			return false; // 반드시 맨끝에 추가해야 정상작동된다.
+		});
+	});
+</script>
+</head>
+<body>
+	<h3>회원가입</h3>
+	<form name="myForm" id="join">
+		<div>
+			<table border="1">
+				<tr>
+					<td align="right">아이디</td>
+					<td><input type="text" name="userID" id="user_id" size="30"></td>
+				</tr>
+				<tr>
+					<td align="right">비밀번호</td>
+					<td><input type="password" name="userPwd" id="user_pwd" size="30"></td>
+				</tr>
+				<tr>
+					<td align="right">주민번호</td>
+					<td><input type="text" name="userJumiNo" id="user_juminNo" size="13"></td>
+				</tr>
+				<tr>
+					<td align="right">성별</td>
+					<td>
+						<input type="radio" name="userGender" id="user_gender" value="남성">남성
+						<input type="radio" name="userGender" id="user_gender" value="여성">여성
+					</td>
+				</tr>
+				<tr>
+					<td align="center">이메일</td>
+					<td><input type="email" name="userEmail" id="user_email" size="50"></td>
+				</tr>
+				<tr>
+					<td align="center">블로그</td>
+					<td><input type="url" name="userBlog" id="user_blog" size="50"></td>
+				</tr>
+				<tr>
+					<td align="center">취미</td>
+					<td>
+						<input type="checkbox" name="userHobby" id="user_hobby" value="축구 경기 보기">축구 경기 보기
+						<input type="checkbox" name="userHobby" id="user_hobby" value="유튜브 시청">유튜브 시청
+						<input type="checkbox" name="userHobby" id="user_hobby" value="동물 구경">동물 구경
+						<input type="checkbox" name="userHobby" id="user_hobby" value="코딩해보기">코딩해보기
+						<input type="checkbox" name="userHobby" id="user_hobby" value="낮잠">낮잠
+					</td>
+				</tr>
+				<tr>
+					<td align="center">직업</td>
+					<td>
+						<select name="userJob" id="user_job">
+							<option value="">직업을 선택하세요</option>
+							<option value="프로그래머">프로그래머</option>
+							<option value="유튜버">유튜버</option>
+							<option value="국회의원">국회의원</option>
+							<option value="건물주">건물주</option>
+							<option value="황제">황제</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<br><br>
+						<div align="center">
+							<input type="submit" value="회원가입" class="myButton">
+							<input type="reset" value="취소" class="myButton">
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+</html>
