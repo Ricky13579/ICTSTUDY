@@ -311,7 +311,7 @@ public class _02_MemberDAOImpl implements _02_MemberDAO{
 	@Override
 	public List<_02_MemberDTO> memberList() {
 		try {
-			String sql = "SELECT * FROM jdbc_member_tb1";
+			String sql = "SELECT * FROM jdbc_member_tb1 ORDER BY id";
 			conn = DriverManager.getConnection(dbURL, dbID, dbPW);
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
