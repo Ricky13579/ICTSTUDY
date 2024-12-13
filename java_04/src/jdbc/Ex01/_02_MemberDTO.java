@@ -43,10 +43,9 @@ public class _02_MemberDTO {
 	
 	@Override
 	public String toString() {
-		return id + "님의 회원정보입니다.\n "
-				  + "[id=" + id + ", password=" + password 
+		return    "[id=" + id + ", password=" + password 
 				  + ", gender=" + gender + ", email=" + email
-				  + ", address=" + address + "]";
+				  + ", address=" + address + "]\n";
 	}
 	
 	

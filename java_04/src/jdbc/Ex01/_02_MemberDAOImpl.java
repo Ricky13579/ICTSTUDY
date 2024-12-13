@@ -1,7 +1,7 @@
 package jdbc.Ex01;
 
 import java.sql.*;
-import java.util.Scanner;
+import java.util.*;
 
 // 인터페이스를 구현하는 클래스
 public class _02_MemberDAOImpl implements _02_MemberDAO{
@@ -9,6 +9,8 @@ public class _02_MemberDAOImpl implements _02_MemberDAO{
 	public _02_MemberDAOImpl() {
 		System.out.println("<<< 디폴트 생성자 >>>");
 	}
+	
+	List<_02_MemberDTO> list = new ArrayList<_02_MemberDTO>();
 	
 	// DB 연결
 	String dbURL = "jdbc:oracle:thin:@localhost:1521:xe"; // @HOST:포트번호:SID
@@ -273,21 +275,55 @@ public class _02_MemberDAOImpl implements _02_MemberDAO{
 	}
 
 	@Override
-	public void memberSelect(Scanner sc) {
-		
+	public int memberSelect(String id) {
+		int selectCnt = 0;
 		try {
-			String sql = "SELECT * FROM jdbc_member_tb1";
+			String sql = "SELECT * "
+						+ "FROM jdbc_member_tb1 "
+						+ "WHERE id = ?";
 			conn = DriverManager.getConnection(dbURL, dbID, dbPW);
 			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery(sql);
-			
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				String id = rs.getString("id");
+				String Id = rs.getString("id");
 				String pw = rs.getString("password");
 				String gender = rs.getString("gender");
 				String email = rs.getString("email");
 				String address = rs.getString("address");
-				System.out.print(id + ", " + pw + ", " + gender + ", " + email + ", " + address + "\n");
+				System.out.print(Id + ", " + pw + ", " + gender + ", " + email + ", " + address + "\n");
+			}	
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null)pstmt.close();
+				if(conn != null) conn.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return selectCnt;
+	}
+	
+	@Override
+	public List<_02_MemberDTO> memberList() {
+		try {
+			String sql = "SELECT * FROM jdbc_member_tb1";
+			conn = DriverManager.getConnection(dbURL, dbID, dbPW);
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				_02_MemberDTO dto = new _02_MemberDTO();
+				dto.setId(rs.getString("id"));
+				dto.setPassword(rs.getString("password"));
+				dto.setGender(rs.getString("gender"));
+				dto.setEmail(rs.getString("email"));
+				dto.setAddress(rs.getString("address"));
+				list.add(dto);
 			}
 			
 		}catch(Exception e) {
@@ -301,6 +337,8 @@ public class _02_MemberDAOImpl implements _02_MemberDAO{
 				e.printStackTrace();
 			}
 		}
+		return list;
 	}
+
 
 }

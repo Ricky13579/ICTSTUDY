@@ -1,6 +1,7 @@
 package jdbc.Ex01;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.*;
 
 public class _02_MemberService {
 	public static void main(String[] args) {
@@ -8,6 +9,7 @@ public class _02_MemberService {
 		// 메서드호출 => 참조변수.메서드명();
 		_02_MemberDAOImpl dao = new _02_MemberDAOImpl();
 		_02_MemberDTO dto = new _02_MemberDTO();
+		List<_02_MemberDTO> list = new ArrayList<_02_MemberDTO>();
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("*----------------*");
@@ -26,7 +28,7 @@ public class _02_MemberService {
 				}
 				while(islogin) {
 					System.out.println("*---------------------------------------------*");
-					System.out.println("1. 추가  2. 수정  3. 삭제  4. 조회   5. 종료");
+					System.out.println("1. 추가  2. 수정  3. 삭제  4. 조회  5.목록  6. 종료");
 					System.out.println("*---------------------------------------------*");
 					System.out.print("◇ 메뉴 선택 : ");
 					int menu = sc.nextInt();
@@ -42,10 +44,30 @@ public class _02_MemberService {
 							dao.memberDelete(sc);
 							break;
 						case 4:
-							System.out.println("전체 회원 정보입니다.");
-							dao.memberSelect(sc);
+							dao.memberSelect(sc.next());
 							break;
 						case 5:
+							System.out.println("회원 목록입니다.");
+							list = dao.memberList();
+							// 호출
+//							for(int i = 0; i < list.size(); i++) {
+//								System.out.println(list.get(i));
+//							}
+							
+							// 방법 1.
+							for(_02_MemberDTO mdto : list) {
+								System.out.println(mdto);
+							}
+							
+							// 방법 2.
+//							Iterator iterator = list.iterator();
+//							while(iterator.hasNext()) {
+//								System.out.println(iterator.next());
+//							}
+							
+							list.clear();
+							break;
+						case 6:
 							System.out.println("시스템을 종료합니다.");
 							System.exit(0);
 							break;
