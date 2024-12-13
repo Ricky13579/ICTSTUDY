@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	fieldset{
+		max-width : 400px;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	/*
+	 * all_check 요소(=전체 선택용 체크박스)의 상태가 변한경우:
+	    전체 선택이 체크된 경우, 아래 4개 항목이 동시에 체크되고,
+	    전체 선택이 체크가 해제된 경우, 아래 4개 항목이 동시에 체크 해제된다.
+ 	*/
+ 	$(function(){
+ 		$("#all_check").change(function(){
+ 			// change(), prop(), is()
+ 		    // prop("속성명", "속성값");
+ 		    // 전체 선택이 change되는 경우 => 개별체크 property 변경
+ 		    
+ 			let is_checked = $("#all_check").is(":checked");
+ 		    
+			$(".season_chk").prop("checked", is_checked);
+ 		});
+ 	});
+</script>
+</head>
+<body>
+	<h3>event - 체크박스 전체선택 가능</h3>
+	<fieldset>
+		<legend>계절</legend>
+	<form action="#" method="post">
+		<p>
+			<label for="all_check">전체 선택</label>
+			<input type="checkbox" id="all_check">
+		</p>
+		<hr>
+		<!-- 개별 선택용 체크박스 -->
+		<p>
+			<label for="spring">봄</label>
+			<input type="checkbox" name="season" id="spring" class="season_chk" value="봄">
+		</p>
+			
+		<p>
+			<label for="summer">여름</label>
+			<input type="checkbox" name="season" id="summer" class="season_chk" value="여름">
+		</p>
+			
+		<p>
+			<label for="fall">가을</label>
+			<input type="checkbox" name="season" id="fall" class="season_chk" value="가을">
+		</p>
+			
+		<p>
+			<label for="winter">겨울</label>
+			<input type="checkbox" name="season" id="winter" class="season_chk" value="겨울">
+		</p>
+	</form>
+	</fieldset>
+</body>
+</html>
