@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>blur(), focus()</title>
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#first").focus(function(){
+			$("#result").html("<h3>오늘 조례 있다!!</h3>");
+		});
+		$("#first").blur(function(){
+			$("#result").html("<h3>오늘 조례 없다!!</h3>");
+		});
+		$("#last").focus(function(){
+			$("#result").html("<h3>오늘 종례 있다!!</h3>");
+		});
+		$("#last").blur(function(){
+			$("#result").html("<h3>오늘 종례 없다!!</h3>");
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="info">
+		조례 : <input type="text" id="first"><br>
+		종례 : <input type="text" id="last"><br>
+	</div>
+	<div id="result"></div>
+</body>
+</html>
