@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>change()</title>
+<style>
+	fieldset{
+		max-width : 300px;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#all").change(function(){
+			let check = $("#all").is(":checked");
+			
+			$(".difficulty").prop("checked", check);
+		});
+	});
+</script>
+</head>
+<body>
+	<fieldset>
+		<legend>난이도</legend>
+		<p>
+			<label for="all">모두 다</label>
+			<input type="checkbox" id="all">
+		</p>
+		<hr>
+		<p>
+			<label for="top">상</label>
+			<input type="checkbox" class="difficulty">
+		</p>
+		<p>
+			<label for="middle">중</label>
+			<input type="checkbox" class="difficulty">
+		</p>
+		<p>
+			<label for="bottom">하</label>
+			<input type="checkbox" class="difficulty">
+		</p>
+	</fieldset>
+</body>
+</html>
