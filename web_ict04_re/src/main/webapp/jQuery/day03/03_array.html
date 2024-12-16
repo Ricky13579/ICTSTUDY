@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제이쿼리 배열 관련 메서드 - $.inArray() / $.isArray() 메서드 / $.merge() 메서드 </title>
+<script type="text/javascript"  src="https://code.jquery.com/jquery-3.7.0.min.js"></script> 
+<script type="text/javascript">
+   /*
+      $.inArray() : 배열에 저장된 데이터 중 지정한 데이터를 인덱스 오름차순으로 찾아 인덱스값을 반환
+      $.isArray() : 지정한 데이터가 배열 객체이면 true를,  배열 객체가 아니면 false를 반환 
+      $.merge() : 두 배열 객체를 하나의 객체로 묶는다.
+   */
+   $(function() {
+      let arr1 = ["서울", "대전", "부산", "전주"];
+      let arr2 = ["유럽", "캐나다", "프랑스", "홍콩"];
+      
+      let obj = {"area" : "서울", "name" : "아이유"};  // JSON 기본형 : {"속성1":값1, "속성2":값2,  "속성3":값3,..}
+      
+      let idxNum = $.inArray("전주", arr1);
+      console.log("idxNum : ", idxNum);  // idxNum :  3
+      
+      let okArr1 = $.isArray(arr1);
+      let okArr2 = $.isArray(arr2);
+      let okObj = $.isArray(obj);
+      console.log("okArr1 : ", okArr1);  // okArr1 : true
+      console.log("okArr2 : ", okArr2);  // okArr2 : true
+      console.log("okObj : ", okObj);  //  okObj : false
+      
+      $.merge(arr2, arr1);
+      console.log("arr2: ", arr2);  // arr2:  ['유럽', '캐나다', '프랑스', '홍콩', '서울', '대전', '부산', '전주']
+   });
+</script>
+</head>
+<body>
+   <h3>제이쿼리 배열 관련 메서드 - $.inArray() / $.isArray() 메서드 / $.merge() 메서드</h3>
+</body>
+</html>
+</head>
+<body>
+
+</body>
+</html>
