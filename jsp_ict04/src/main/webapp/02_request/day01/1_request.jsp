@@ -20,6 +20,10 @@
 				<td><input type="password" name="user_pwd" size="30"></td>
 			</tr>
 			<tr>
+				<th align="right">이메일 : </th>
+				<td><input type="email" name="user_email" size="30"></td>
+			</tr>
+			<tr>
 				<td colspan="2" align="center">
 					<br><br>
 					<div>

@@ -13,14 +13,17 @@
 	
 		String id = request.getParameter("user_id");
 		String pwd = request.getParameter("user_pwd");
+		String email = request.getParameter("user_email");
 		
 		out.print("== 방법1. out으로 출력 =="+"<br>");
 		out.print("아이디 : " + id + "<br>");
 		out.print("비밀번호 : " + pwd + "<br>");
+		out.print("이메일 : " + email + "<br>");
 	%>
 	<br>
 	== 방법2. 표현식으로 출력 ==<br>
 	아이디 : <%= id %><br>
 	비밀번호 : <%= pwd %><br>
+	이메일 : <%= email %><br>
 </body>
 </html>
