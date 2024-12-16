@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제이쿼리 관련 메서드 - index() 메서드</title>
+<script type="text/javascript"  src="https://code.jquery.com/jquery-3.7.0.min.js"></script> 
+<script type="text/javascript">
+   /*
+      index() : 지정 선택  요소를 찾아 인덱스값을 반환
+      $("요소선택").index("지정 선택  요소");
+   */
+   $(function() {
+      let idxNum = $("#menu li").index($("#list3"));
+      console.log("idxNum : ", idxNum);   // idxNum :  2
+   });
+   
+</script>
+</head>
+<body>
+   <h3>제이쿼리 관련 메서드 - index() 메서드</h3>
+   
+   <ul id="menu">
+      <li>내용1</li>
+      <li>내용2</li>
+      <li id="list3">내용3</li>
+      <li>내용4</li>
+   </ul>
+</body>
+</html>
