@@ -30,7 +30,7 @@
 			<td width="300" valign="top">
 				메인 레이아웃<br><br>
 				로그인<br>
-				<img src="../images/pic3.jpg" width="450px">
+				<img src="../images/pic3.jpg" width="400px">
 			</td>
 		</tr>
 		<tr>
