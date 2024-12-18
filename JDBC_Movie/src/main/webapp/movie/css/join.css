@@ -1,0 +1,10 @@
+@charset "UTF-8";
+table{
+		margin: 10px auto;
+		border-collapse: collapse;
+		max-width: 80%;
+}
+	
+th{
+	font-size: 10px;
+}
