@@ -7,9 +7,6 @@
 <title>회원가입 페이지</title>
 <link rel="stylesheet" href="../css/join.css">
 <script type="text/javascript" src="../js/join_email.js"></script>
-<script type="text/javascript">
-	
-</script>
 </head>
 <body>
 	<jsp:include page="header.jsp" />
