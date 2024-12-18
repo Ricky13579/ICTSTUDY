@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인 가능 여부 확인 페이지</title>
+<title>로그인 처리 페이지</title>
 </head>
 <body>
 	<%-- 로그인하면서 아이디와 비밀번호를 체크하는 페이지 --%>
