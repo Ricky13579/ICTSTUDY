@@ -61,9 +61,33 @@
 		</div>
 		<div class="movie_menu">
 			<div class="movie_contents">
+			<% 
+				if(id == null){ 
+			%>
 				<a href="">영화</a>
 				<a href="">극장</a>
 				<a href="">예매</a>
+			<% 
+				}
+			   else if(id != null && id.equals("mj"))
+			   {
+			%>
+				<a href="">영화</a>
+				<a href="">극장</a>
+				<a href="">예매</a>
+				<a href="">영화추가</a>
+				<a href="">극장추가</a>
+			<%
+			   }
+			   else
+			   {
+			%>
+				<a href="">영화</a>
+				<a href="">극장</a>
+				<a href="">예매</a>
+			<%
+			   }
+			%>
 			</div>
 		</div>
 	</div>
