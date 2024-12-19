@@ -13,7 +13,7 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
-	<h3>회원가입 페이지</h3>
+	<h3>회원정보 수정 페이지</h3>
 	<hr>
 	<form action="updateDAOImpl.jsp" action="post" name="frm">
 		<table border="1" cellspacing="0" cellpadding="10">
